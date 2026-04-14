@@ -1,0 +1,105 @@
+<h2>Как должен выглядеть герой главной страницы?</h2>
+<p class="subtitle">Три разных подхода в рамках Bold Modern направления. Все тёмные, все сильные — но с разным характером.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="A" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:260px;padding:0;overflow:hidden;">
+      <div style="background:#0a0a0a;height:100%;position:relative;overflow:hidden;">
+        <!-- Full bleed photo + giant type overlay -->
+        <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=60') center/cover;opacity:0.35;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.75) 100%);"></div>
+        <!-- Sticky thin nav -->
+        <div style="position:absolute;top:0;left:0;right:0;padding:16px 28px;display:flex;justify-content:space-between;align-items:center;z-index:2;">
+          <span style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.9);font-weight:700;">RIMALTA</span>
+          <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);">Projects · Owners · Invest</span>
+          <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e8c547;border:1px solid #e8c547;padding:4px 10px;">↗ Talk to us</span>
+        </div>
+        <!-- Giant type -->
+        <div style="position:absolute;bottom:28px;left:28px;right:28px;z-index:2;">
+          <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#e8c547;margin-bottom:10px;">Ras Al Khaimah · UAE</div>
+          <div style="font-size:52px;font-weight:900;color:#fff;line-height:0.92;letter-spacing:-2px;margin-bottom:14px;">UAE<br>PROPERTY<br>ADVISORY.</div>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="background:#e8c547;color:#0a0a0a;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;font-weight:700;">Book a Call</div>
+            <div style="color:rgba(255,255,255,0.55);font-size:10px;letter-spacing:1px;">or leave a brief below ↓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Cinematic Full-Bleed</h3>
+      <p>Фото на весь экран, огромный заголовок снизу слева, жёлтый CTA. Герой как постер. Один кадр — сразу всё понятно. Референс: архитектурные бюро, luxury developer сайты.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="B" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:260px;padding:0;overflow:hidden;">
+      <div style="background:#111;height:100%;position:relative;display:flex;">
+        <!-- Split: left dark text, right image -->
+        <div style="flex:0 0 52%;padding:20px 24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1;">
+          <div>
+            <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#e8c547;margin-bottom:16px;">Rimalta · UAE Advisory</div>
+            <div style="font-size:28px;font-weight:900;color:#fff;line-height:0.95;letter-spacing:-1px;margin-bottom:12px;">BUILT<br>WITH<br>DISCIPLINE.</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:160px;">Owners, buyers, and investors who want real execution.</div>
+          </div>
+          <div>
+            <div style="background:#e8c547;color:#0a0a0a;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;display:inline-block;font-weight:700;margin-bottom:8px;">Book Advisory Call</div>
+            <div style="display:block;font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:1px;">or fill brief ↓</div>
+          </div>
+        </div>
+        <!-- Right image panel -->
+        <div style="flex:1;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&q=60') center/cover;"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to right, #111 0%, transparent 30%);"></div>
+          <!-- Floating stat -->
+          <div style="position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);padding:8px 12px;border-left:2px solid #e8c547;">
+            <div style="font-size:18px;font-weight:900;color:#fff;">AED 800K</div>
+            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.5);">Entry · Mina Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Split Panel</h3>
+      <p>Левая половина — тёмная с типографикой и CTA. Правая — фотография проекта. Floating stat карточка с ценой входа. Структурированнее, яснее иерархия.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="C" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:260px;padding:0;overflow:hidden;">
+      <div style="background:#0d0d0d;height:100%;position:relative;overflow:hidden;">
+        <!-- Editorial: tiny nav, massive number, image peek -->
+        <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=60') right/50% 100% no-repeat; opacity:0.5;"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to right, #0d0d0d 50%, transparent 100%);"></div>
+        <!-- Ultra minimal nav -->
+        <div style="position:absolute;top:16px;left:28px;right:28px;display:flex;justify-content:space-between;align-items:center;z-index:2;">
+          <span style="font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.6);">RIMALTA</span>
+          <div style="width:24px;height:1px;background:rgba(255,255,255,0.3);position:relative;">
+            <div style="position:absolute;top:-4px;right:0;width:8px;height:8px;border-right:1px solid rgba(255,255,255,0.5);border-top:1px solid rgba(255,255,255,0.5);transform:rotate(45deg);"></div>
+          </div>
+        </div>
+        <div style="position:absolute;left:28px;top:50%;transform:translateY(-50%);z-index:2;">
+          <!-- Super editorial layout -->
+          <div style="font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#e8c547;margin-bottom:8px;">01 / Advisory</div>
+          <div style="font-size:58px;font-weight:900;color:#fff;line-height:0.9;letter-spacing:-3px;margin-bottom:6px;">UAE<br>RE.</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:16px;max-width:140px;line-height:1.5;">Discipline over noise. Real execution for owners and investors.</div>
+          <div style="display:flex;gap:8px;">
+            <div style="border:1px solid #e8c547;color:#e8c547;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;">↗ Talk</div>
+            <div style="border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.4);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;">Brief</div>
+          </div>
+        </div>
+        <!-- Section counter -->
+        <div style="position:absolute;right:28px;bottom:16px;z-index:2;text-align:right;">
+          <div style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Mina · RAK · 2026</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Editorial Minimal</h3>
+      <p>Сверхминималистичная навигация, аббревиатура как дизайн-элемент ("UAE RE."), фото справа за текстом. Самый характерный, самый "авторский". Для аудитории, которая считывает код.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:24px;">Все три — в рамках Bold Modern. Разница в характере: постер, структура, или editorial.</p>

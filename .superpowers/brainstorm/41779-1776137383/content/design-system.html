@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rimalta Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,0,400;6..96,0,700;6..96,0,900;6..96,1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0d0d;
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    padding: 40px;
+    line-height: 1.5;
+  }
+  .section { margin-bottom: 56px; }
+  .label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #E8C547;
+    margin-bottom: 20px;
+    display: block;
+  }
+  /* Color Palette */
+  .palette { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch {
+    display: flex; flex-direction: column;
+    width: 120px;
+  }
+  .swatch-color {
+    height: 80px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .swatch-name { font-size: 11px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+  .swatch-hex { font-size: 10px; color: rgba(255,255,255,0.4); font-family: monospace; }
+  .swatch-role { font-size: 9px; color: rgba(255,255,255,0.3); margin-top: 3px; }
+
+  /* Typography */
+  .type-row {
+    display: flex; align-items: baseline; gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .type-meta { flex: 0 0 140px; }
+  .type-name { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+  .type-spec { font-size: 9px; color: rgba(255,255,255,0.25); font-family: monospace; }
+
+  /* Accent + neutrals row */
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 32px 0;
+  }
+
+  /* Comparison block */
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .ba-block {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .ba-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .ba-label.before { color: rgba(255,255,255,0.25); }
+  .ba-label.after { color: #E8C547; }
+
+  h2 { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.5); margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<div class="section">
+  <span class="label">01 — Colour Palette</span>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0d0d0d;"></div>
+      <div class="swatch-name">Void</div>
+      <div class="swatch-hex">#0d0d0d</div>
+      <div class="swatch-role">Page background</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#141414;"></div>
+      <div class="swatch-name">Surface</div>
+      <div class="swatch-hex">#141414</div>
+      <div class="swatch-role">Cards, panels</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1e1e1e;"></div>
+      <div class="swatch-name">Elevated</div>
+      <div class="swatch-hex">#1e1e1e</div>
+      <div class="swatch-role">Hover states</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E8C547;"></div>
+      <div class="swatch-name">Amber</div>
+      <div class="swatch-hex">#E8C547</div>
+      <div class="swatch-role">Primary accent, CTAs</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ffffff;"></div>
+      <div class="swatch-name">White</div>
+      <div class="swatch-hex">#ffffff</div>
+      <div class="swatch-role">Primary text</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:rgba(255,255,255,0.5);"></div>
+      <div class="swatch-name">White 50</div>
+      <div class="swatch-hex">rgba(255,255,255,0.5)</div>
+      <div class="swatch-role">Secondary text</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:rgba(255,255,255,0.12);"></div>
+      <div class="swatch-name">White 12</div>
+      <div class="swatch-hex">rgba(255,255,255,0.12)</div>
+      <div class="swatch-role">Borders, dividers</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <span class="label">02 — Typography</span>
+  <div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-name">Display</div>
+        <div class="type-spec">Bodoni Moda 900<br>96–140px / -4px ls</div>
+      </div>
+      <div style="font-family:'Bodoni Moda',serif;font-size:72px;font-weight:900;line-height:0.9;letter-spacing:-3px;color:#fff;">UAE RE.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-name">Headline</div>
+        <div class="type-spec">Manrope 800<br>40–56px / -1.5px ls</div>
+      </div>
+      <div style="font-family:'Manrope',sans-serif;font-size:42px;font-weight:800;line-height:1;letter-spacing:-1.5px;color:#fff;">Built with discipline.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-name">Section Title</div>
+        <div class="type-spec">Manrope 700<br>28–34px / -0.5px ls</div>
+      </div>
+      <div style="font-family:'Manrope',sans-serif;font-size:28px;font-weight:700;line-height:1.1;letter-spacing:-0.5px;color:#fff;">Two Mina projects.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-name">Eyebrow</div>
+        <div class="type-spec">Manrope 600<br>10px / +4px ls / caps</div>
+      </div>
+      <div style="font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#E8C547;">01 / Advisory · Ras Al Khaimah</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-name">Body</div>
+        <div class="type-spec">Manrope 400<br>15–16px / 1.7 lh</div>
+      </div>
+      <div style="font-family:'Manrope',sans-serif;font-size:15px;font-weight:400;line-height:1.7;color:rgba(255,255,255,0.55);max-width:480px;">Rimalta helps UAE property owners, buyers, and investors move faster with cleaner listing preparation, sharper follow-up, and calmer commercial control.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-name">UI / Nav</div>
+        <div class="type-spec">Manrope 500<br>11px / +2px ls / caps</div>
+      </div>
+      <div style="font-family:'Manrope',sans-serif;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);">Projects · Owners · Invest · About</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <span class="label">03 — Key UI Elements</span>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+    <!-- Primary button -->
+    <div style="background:#E8C547;color:#0d0d0d;font-family:'Manrope',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:14px 28px;cursor:pointer;">Book Advisory Call</div>
+    <!-- Ghost button -->
+    <div style="border:1px solid rgba(255,255,255,0.25);color:#fff;font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:14px 28px;cursor:pointer;">Open SKAI brief ↗</div>
+    <!-- Amber ghost -->
+    <div style="border:1px solid #E8C547;color:#E8C547;font-family:'Manrope',sans-serif;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:14px 28px;cursor:pointer;">↗ Talk to us</div>
+    <!-- Chip -->
+    <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);font-family:'Manrope',sans-serif;font-size:10px;font-weight:500;letter-spacing:1px;padding:6px 14px;border-radius:100px;">Q2 2028</div>
+    <!-- Stat card -->
+    <div style="border-left:2px solid #E8C547;padding:10px 16px;background:rgba(255,255,255,0.04);">
+      <div style="font-family:'Manrope',sans-serif;font-size:24px;font-weight:800;color:#fff;line-height:1;">AED 877K</div>
+      <div style="font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Entry · SKAI</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div style="text-align:center;padding:20px 0;">
+  <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Выглядит правильно? Напиши в терминал.</p>
+</div>
+
+</body>
+</html>

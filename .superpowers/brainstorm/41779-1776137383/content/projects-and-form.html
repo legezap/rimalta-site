@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rimalta — Projects + Brief Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,0,400;6..96,0,900;6..96,1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #111; font-family: 'Manrope', sans-serif; color: #fff; }
+
+.label-tag {
+  display: inline-block;
+  background: #E8C547;
+  color: #0d0d0d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  margin-bottom: 24px;
+}
+
+.device {
+  max-width: 960px;
+  margin: 32px auto;
+  background: #0d0d0d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ─── SECTION HEADER ─── */
+.section-header {
+  padding: 64px 48px 48px;
+}
+.eyebrow {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #E8C547;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: #E8C547;
+}
+.section-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #fff;
+  line-height: 1.05;
+  max-width: 500px;
+}
+.section-title em {
+  font-style: normal;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ─── PROJECT CARDS ─── */
+.projects-grid {
+  padding: 0 48px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+}
+
+.project-card {
+  background: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Photo simulation */
+.card-photo {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+.card-photo-skai {
+  background:
+    repeating-linear-gradient(168deg, transparent, transparent 22px, rgba(255,255,255,0.022) 22px, rgba(255,255,255,0.022) 23px),
+    linear-gradient(145deg, #1a1510 0%, #2d2314 35%, #3e2e1a 55%, #221b0f 80%, #0f0d08 100%);
+}
+.card-photo-nura {
+  background:
+    repeating-linear-gradient(175deg, transparent, transparent 18px, rgba(255,255,255,0.018) 18px, rgba(255,255,255,0.018) 19px),
+    linear-gradient(145deg, #0e1318 0%, #142030 35%, #1a2d40 55%, #0f1b27 80%, #080c10 100%);
+}
+.card-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.3) 50%, transparent 100%);
+}
+/* Architectural detail lines */
+.card-photo::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 1px;
+  height: 60%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.06), transparent);
+  box-shadow: 30px 0 0 rgba(255,255,255,0.03), -20px 0 0 rgba(255,255,255,0.04), 70px 0 0 rgba(255,255,255,0.02);
+  z-index: 1;
+}
+/* Badge top-right */
+.card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  background: rgba(13,13,13,0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 5px 10px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+/* Status pill */
+.card-status {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  background: rgba(232,197,71,0.12);
+  border: 1px solid rgba(232,197,71,0.3);
+  padding: 4px 10px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #E8C547;
+}
+
+.card-body {
+  padding: 24px 28px 28px;
+}
+.card-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #E8C547;
+  margin-bottom: 8px;
+}
+.card-name {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.card-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.card-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.card-meta-value {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.card-meta-label {
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.card-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 16px;
+}
+.card-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-link {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 2px;
+}
+.card-price {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: -0.2px;
+}
+.card-price strong {
+  color: #E8C547;
+  font-size: 14px;
+}
+
+/* ─── COMPARE CTA STRIP ─── */
+.compare-strip {
+  margin: 0 48px;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.compare-strip-text {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.3px;
+}
+.compare-strip-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+.btn-ghost-amber {
+  border: 1px solid #E8C547;
+  color: #E8C547;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+/* ─── DIVIDER ─── */
+.section-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+  margin: 0 48px;
+}
+
+/* ─── BRIEF FORM SECTION ─── */
+.brief-section {
+  padding: 64px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.brief-left {}
+.brief-eyebrow {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #E8C547;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.brief-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: #E8C547;
+}
+.brief-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.brief-copy {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  max-width: 360px;
+}
+.brief-signals {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.brief-signal {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.brief-signal-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #E8C547;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.brief-signal-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+
+/* Form */
+.brief-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.form-field {
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0 16px;
+}
+.form-field:first-child {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.form-label {
+  display: block;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 8px;
+}
+.form-input {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  outline: none;
+  padding: 0;
+}
+.form-input::placeholder {
+  color: rgba(255,255,255,0.18);
+}
+/* Radio-style selector */
+.form-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+.form-option {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.35);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.form-option.active {
+  background: rgba(232,197,71,0.1);
+  border-color: #E8C547;
+  color: #E8C547;
+}
+.form-textarea {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  outline: none;
+  padding: 0;
+  resize: none;
+  line-height: 1.7;
+  min-height: 60px;
+}
+.form-textarea::placeholder {
+  color: rgba(255,255,255,0.18);
+}
+.form-submit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+}
+.btn-primary {
+  background: #E8C547;
+  color: #0d0d0d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+.form-disclaimer {
+  font-size: 9px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.5px;
+  max-width: 160px;
+  line-height: 1.5;
+}
+
+/* WhatsApp CTA */
+.whatsapp-row {
+  padding: 0 48px 64px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.whatsapp-divider {
+  height: 1px;
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+}
+.whatsapp-or {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+.btn-whatsapp {
+  background: rgba(37,211,102,0.1);
+  border: 1px solid rgba(37,211,102,0.25);
+  color: rgba(37,211,102,0.8);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  white-space: nowrap;
+}
+
+.note {
+  text-align: center;
+  padding: 28px;
+  background: #111;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+</style>
+</head>
+<body>
+
+<div style="padding: 24px 40px 0; display:flex; justify-content:space-between; align-items:center;">
+  <div class="label-tag">Section 3 of 4 — Projects + Brief Form</div>
+  <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);">Approve or request changes in terminal</span>
+</div>
+
+<div class="device">
+
+  <!-- PROJECTS SECTION -->
+  <div class="section-header">
+    <div class="eyebrow">Mina · Ras Al Khaimah</div>
+    <div class="section-title">Two projects.<br><em>One advisory layer.</em></div>
+  </div>
+
+  <div class="projects-grid">
+    <!-- SKAI -->
+    <div class="project-card">
+      <div class="card-photo card-photo-skai">
+        <div class="card-badge">SKAI</div>
+        <div class="card-status">Pre-launch</div>
+        <div class="card-photo-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-label">01 / RAK Properties</div>
+        <div class="card-name">SKAI</div>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <div class="card-meta-value">Q2 2028</div>
+            <div class="card-meta-label">Delivery</div>
+          </div>
+          <div class="card-meta-item">
+            <div class="card-meta-value">Studios–3BR</div>
+            <div class="card-meta-label">Unit types</div>
+          </div>
+          <div class="card-meta-item">
+            <div class="card-meta-value">Mina</div>
+            <div class="card-meta-label">Location</div>
+          </div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-copy">High-rise residential in South Harbour. Sea-facing units, structured payment plan, early-stage pricing advantage.</div>
+        <div class="card-footer">
+          <div class="card-link">Open SKAI brief ↗</div>
+          <div class="card-price">from <strong>AED 877K</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NURA -->
+    <div class="project-card">
+      <div class="card-photo card-photo-nura">
+        <div class="card-badge">NURA</div>
+        <div class="card-status">Pre-launch</div>
+        <div class="card-photo-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-label">02 / RAK Properties</div>
+        <div class="card-name">Nura</div>
+        <div class="card-meta">
+          <div class="card-meta-item">
+            <div class="card-meta-value">Q4 2028</div>
+            <div class="card-meta-label">Delivery</div>
+          </div>
+          <div class="card-meta-item">
+            <div class="card-meta-value">1–4BR</div>
+            <div class="card-meta-label">Unit types</div>
+          </div>
+          <div class="card-meta-item">
+            <div class="card-meta-value">Mina</div>
+            <div class="card-meta-label">Location</div>
+          </div>
+        </div>
+        <div class="card-divider"></div>
+        <div class="card-copy">Waterfront community. Larger formats, longer plan, lifestyle-oriented positioning. Ideal for end-use or mid-term hold.</div>
+        <div class="card-footer">
+          <div class="card-link">Open Nura brief ↗</div>
+          <div class="card-price">from <strong>AED 800K</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="compare-strip">
+    <div class="compare-strip-text">Not sure which fits your goals? <strong>We'll compare both for you — free, no commitment.</strong></div>
+    <div class="btn-ghost-amber">↗ Compare projects</div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- BRIEF FORM SECTION -->
+  <div class="brief-section">
+    <div class="brief-left">
+      <div class="brief-eyebrow">Work with us</div>
+      <div class="brief-title">Tell us what you're trying to do.</div>
+      <div class="brief-copy">No pitch. No spam. You fill in the brief, we read it, then schedule 20 minutes if there's a fit.</div>
+      <div class="brief-signals">
+        <div class="brief-signal">
+          <div class="brief-signal-dot"></div>
+          <div class="brief-signal-text">We respond within 4 business hours</div>
+        </div>
+        <div class="brief-signal">
+          <div class="brief-signal-dot"></div>
+          <div class="brief-signal-text">No third parties, no data sharing</div>
+        </div>
+        <div class="brief-signal">
+          <div class="brief-signal-dot"></div>
+          <div class="brief-signal-text">Direct line to advisory, not a call center</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="brief-form">
+        <div class="form-field">
+          <label class="form-label">Your name</label>
+          <input class="form-input" type="text" placeholder="First name is fine">
+        </div>
+        <div class="form-field">
+          <label class="form-label">I am looking to</label>
+          <div class="form-options">
+            <div class="form-option active">Buy</div>
+            <div class="form-option">Invest</div>
+            <div class="form-option">Lease</div>
+            <div class="form-option">List my property</div>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Project interest</label>
+          <div class="form-options">
+            <div class="form-option active">SKAI</div>
+            <div class="form-option">Nura</div>
+            <div class="form-option">Both / Not sure</div>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Budget range (AED)</label>
+          <div class="form-options">
+            <div class="form-option">800K–1.2M</div>
+            <div class="form-option active">1.2M–2M</div>
+            <div class="form-option">2M+</div>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Anything else</label>
+          <textarea class="form-textarea" rows="2" placeholder="Timeline, specific requirements, questions..."></textarea>
+        </div>
+        <div class="form-submit-row">
+          <button class="btn-primary">Send brief →</button>
+          <div class="form-disclaimer">We read every brief personally. No bots.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp alt CTA -->
+  <div class="whatsapp-row">
+    <div class="whatsapp-divider"></div>
+    <div class="whatsapp-or">or</div>
+    <div class="whatsapp-divider"></div>
+    <div class="btn-whatsapp">↗ Message on WhatsApp</div>
+    <div class="whatsapp-divider"></div>
+  </div>
+
+</div>
+
+<div class="note">Это не финальный дизайн — структура и иерархия. Фото заменят CSS. Напиши в терминал: ok / изменить X.</div>
+
+</body>
+</html>

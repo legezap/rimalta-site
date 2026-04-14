@@ -9,7 +9,7 @@
   <style>
     .project-hero {
       position: relative;
-      min-height: 55vh;
+      min-height: 85vh;
       display: flex;
       align-items: flex-end;
       padding: 80px 0;
@@ -18,12 +18,29 @@
     .project-hero-bg {
       position: absolute;
       inset: 0;
-      /* TODO: replace with real project render */
+    }
+    .project-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .project-hero-video-el {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .project-hero-video-el { display: block; }
+      .project-hero-bg img { display: none; }
     }
     .project-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.45) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.4) 55%, rgba(13,13,13,0.2) 100%);
     }
     .project-hero-content { position: relative; z-index: 2; }
 
@@ -32,6 +49,9 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--white-06);
+    }
+    @media (min-width: 768px) {
+      .metrics-grid { grid-template-columns: repeat(4, 1fr); }
     }
     .metric-item {
       background: var(--void);
@@ -45,7 +65,38 @@
       flex-direction: column;
       gap: 20px;
     }
-    .payment-row .stat-value { font-size: 22px; margin-bottom: 4px; }
+
+    .gallery-section { padding: 60px 0; }
+    .gallery-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+
+    .video-section {
+      position: relative;
+      background: #000;
+      overflow: hidden;
+    }
+    .video-section video {
+      width: 100%;
+      display: block;
+      max-height: 70vh;
+      object-fit: cover;
+    }
+    .video-caption {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -58,19 +109,30 @@
   <main class="page-start">
 
     <section class="project-hero">
-      <div class="project-hero-bg" style="background:linear-gradient(145deg,#1a1510,#2e2212 40%,#1a1208);"></div>
+      <!-- Mobile fallback image -->
+      <div class="project-hero-bg">
+        <img src="../assets/media/skai/skai-ext-1.jpg" alt="SKAI by RAK Properties exterior" loading="eager">
+      </div>
+      <!-- Desktop video -->
+      <video class="project-hero-video-el" autoplay muted loop playsinline poster="../assets/media/skai/skai-ext-1.jpg">
+        <source src="../assets/media/skai/skai-video.mp4" type="video/mp4">
+      </video>
       <div class="project-hero-overlay"></div>
       <div class="container project-hero-content">
         <div class="status-pill reveal" style="margin-bottom:20px;">Under Construction · Q2 2028</div>
         <h1 class="display reveal" style="margin-bottom:16px;">SKAI</h1>
-        <p class="body-copy reveal" style="max-width:480px;margin-bottom:32px;">RAK Properties' flagship Mina tower. Sea and marina views. Studios from AED 877K with 60/40 payment plan.</p>
-        <a class="btn btn-primary reveal" href="#brief">Request a brief →</a>
+        <p class="body-copy reveal" style="max-width:480px;margin-bottom:32px;">RAK Properties' flagship Mina tower. Sea and marina views. Studios from AED 877K with 60/40 payment plan. Short-term rental permitted.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;" class="reveal">
+          <a class="btn btn-primary" href="#brief">Request a brief →</a>
+          <a class="btn btn-ghost-white" href="../compare.html">Compare with Nura ↗</a>
+        </div>
       </div>
     </section>
 
-    <section style="padding:60px 0;border-bottom:1px solid var(--white-06);">
-      <div class="container">
-        <div class="metrics-grid cards-row">
+    <!-- Key metrics -->
+    <section style="border-bottom:1px solid var(--white-06);">
+      <div class="container" style="padding:0;">
+        <div class="metrics-grid">
           <div class="metric-item reveal">
             <div class="stat-value" style="font-size:28px;margin-bottom:6px;">AED 877K</div>
             <div class="stat-label">Starting price — studio</div>
@@ -85,12 +147,28 @@
           </div>
           <div class="metric-item reveal">
             <div class="stat-value" style="font-size:28px;margin-bottom:6px;">7–9%</div>
-            <div class="stat-label">Estimated gross yield</div>
+            <div class="stat-label">Est. gross yield</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Exterior gallery -->
+    <section class="gallery-section" style="border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="gallery-label reveal">Exteriors</div>
+        <div class="gallery-grid">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-ext-1.jpg" alt="SKAI exterior view 1" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-ext-2.jpg" alt="SKAI exterior view 2" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-ext-3.jpg" alt="SKAI exterior view 3" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-ext-4.jpg" alt="SKAI exterior view 4" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-ext-5.jpg" alt="SKAI exterior view 5" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-ext-6.jpg" alt="SKAI exterior aerial" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- About the project + payment plan -->
     <section class="section">
       <div class="container" style="display:grid;gap:56px;">
         <div class="reveal">
@@ -101,15 +179,15 @@
         <div class="reveal">
           <div class="eyebrow" style="margin-bottom:16px;">Payment plan</div>
           <div class="payment-plan">
-            <div class="payment-row">
+            <div>
               <div class="stat-value" style="font-size:22px;margin-bottom:4px;">20%</div>
               <div class="stat-label">On booking</div>
             </div>
-            <div class="payment-row">
+            <div>
               <div class="stat-value" style="font-size:22px;margin-bottom:4px;">40%</div>
               <div class="stat-label">During construction (installments)</div>
             </div>
-            <div class="payment-row">
+            <div>
               <div class="stat-value" style="font-size:22px;margin-bottom:4px;">40%</div>
               <div class="stat-label">On completion — Q2 2028</div>
             </div>
@@ -118,6 +196,21 @@
       </div>
     </section>
 
+    <!-- Interior gallery -->
+    <section class="gallery-section" style="border-top:1px solid var(--white-06);border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="gallery-label reveal">Interiors</div>
+        <div class="gallery-grid">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-int-1.jpg" alt="SKAI interior living" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-int-2.jpg" alt="SKAI interior bedroom" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-int-3.jpg" alt="SKAI interior kitchen" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-int-4.jpg" alt="SKAI interior bathroom" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/skai/skai-int-5.jpg" alt="SKAI interior detail" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Brief form -->
     <section class="brief-section" id="brief">
       <div class="container">
         <div class="brief-grid">
@@ -132,8 +225,9 @@
               <div class="trust-dot"></div>
               <div class="trust-label">Payment plan walkthroughs on request — no pressure, no deadline</div>
             </div>
-            <div style="margin-top:24px;">
-              <a class="btn btn-ghost-white" href="../compare.html">Compare with Nura ↗</a>
+            <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px;">
+              <a class="btn btn-primary" href="https://wa.me/971XXXXXXXXXX" target="_blank" rel="noopener" style="text-align:center;">↗ Talk to us on WhatsApp</a>
+              <a class="btn btn-ghost-white" href="../compare.html" style="text-align:center;">Compare with Nura ↗</a>
             </div>
           </div>
           <form class="brief-form reveal" id="brief-form">

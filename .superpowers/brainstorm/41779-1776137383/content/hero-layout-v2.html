@@ -1,0 +1,130 @@
+<h2>Как должен выглядеть герой главной страницы?</h2>
+<p class="subtitle">Три подхода в рамках Bold Modern. Все тёмные — разный характер.</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="A" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:280px;padding:0;overflow:hidden;border-radius:8px 8px 0 0;">
+      <div style="background:#0a0a0a;height:100%;position:relative;overflow:hidden;">
+        <!-- Simulated photo via CSS gradient -->
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1008 0%,#2a1f0e 30%,#3d2e18 55%,#1e1a14 80%,#0a0a0a 100%);"></div>
+        <!-- Texture lines to simulate architecture -->
+        <div style="position:absolute;right:0;top:0;bottom:0;width:45%;background:repeating-linear-gradient(170deg,transparent,transparent 18px,rgba(255,255,255,0.025) 18px,rgba(255,255,255,0.025) 19px);"></div>
+        <div style="position:absolute;right:40%;top:20%;width:1px;height:60%;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.08),transparent);"></div>
+        <!-- Dark overlay bottom -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(0,0,0,0.92) 0%,transparent 100%);"></div>
+        <!-- Nav -->
+        <div style="position:absolute;top:0;left:0;right:0;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;z-index:2;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <span style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#fff;font-weight:700;">RIMALTA</span>
+          <div style="display:flex;gap:16px;">
+            <span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);">Projects</span>
+            <span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);">Owners</span>
+            <span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);">Invest</span>
+          </div>
+          <span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#e8c547;border:1px solid #e8c547;padding:4px 10px;">↗ Talk</span>
+        </div>
+        <!-- Big type bottom-left -->
+        <div style="position:absolute;bottom:20px;left:20px;z-index:2;">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#e8c547;margin-bottom:8px;">Ras Al Khaimah · UAE</div>
+          <div style="font-size:46px;font-weight:900;color:#fff;line-height:0.9;letter-spacing:-2px;margin-bottom:12px;">UAE<br>PROPERTY<br>ADVISORY.</div>
+          <div style="display:flex;gap:10px;align-items:center;">
+            <div style="background:#e8c547;color:#0a0a0a;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;font-weight:700;">Book a Call</div>
+            <div style="color:rgba(255,255,255,0.4);font-size:9px;">or leave a brief ↓</div>
+          </div>
+        </div>
+        <!-- Photo label -->
+        <div style="position:absolute;bottom:20px;right:20px;z-index:2;text-align:right;">
+          <div style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);">SKAI · South Harbour</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Cinematic Full-Bleed</h3>
+      <p>Фото на весь экран, огромный заголовок снизу слева, жёлтый CTA. Один кадр — сразу всё понятно. Референс: архитектурные бюро, Awwwards luxury developer.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="B" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:280px;padding:0;overflow:hidden;border-radius:8px 8px 0 0;">
+      <div style="background:#0f0f0f;height:100%;display:flex;position:relative;overflow:hidden;">
+        <!-- Left text panel -->
+        <div style="flex:0 0 55%;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2;">
+          <div>
+            <div style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#e8c547;margin-bottom:14px;">Rimalta · UAE Advisory</div>
+            <div style="font-size:32px;font-weight:900;color:#fff;line-height:0.9;letter-spacing:-1.5px;margin-bottom:10px;">BUILT<br>WITH<br>DISCIPLINE.</div>
+            <div style="font-size:9px;color:rgba(255,255,255,0.45);line-height:1.6;max-width:150px;">Owners, buyers, and investors who want real execution.</div>
+          </div>
+          <div>
+            <div style="background:#e8c547;color:#0a0a0a;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:8px 14px;display:inline-block;font-weight:700;margin-bottom:8px;">Book Advisory Call</div>
+            <div style="display:block;font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:1px;">or fill brief below ↓</div>
+          </div>
+        </div>
+        <!-- Right image panel (CSS simulated) -->
+        <div style="flex:1;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:linear-gradient(160deg,#2a1f0e 0%,#3d2e18 40%,#241c10 70%,#1a1208 100%);"></div>
+          <!-- Architecture lines -->
+          <div style="position:absolute;inset:0;background:repeating-linear-gradient(175deg,transparent,transparent 22px,rgba(255,255,255,0.03) 22px,rgba(255,255,255,0.03) 23px);"></div>
+          <div style="position:absolute;top:15%;left:20%;width:60%;height:1px;background:rgba(255,255,255,0.06);"></div>
+          <div style="position:absolute;top:35%;left:10%;width:80%;height:1px;background:rgba(255,255,255,0.04);"></div>
+          <!-- Left fade -->
+          <div style="position:absolute;inset:0;background:linear-gradient(to right,#0f0f0f 0%,transparent 40%);"></div>
+          <!-- Floating stat card -->
+          <div style="position:absolute;bottom:16px;right:12px;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);padding:8px 12px;border-left:2px solid #e8c547;">
+            <div style="font-size:20px;font-weight:900;color:#fff;line-height:1;">AED 800K</div>
+            <div style="font-size:7px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Entry · Mina Projects</div>
+          </div>
+          <!-- Top right label -->
+          <div style="position:absolute;top:12px;right:12px;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.2);">SKAI · NURA</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Split Panel</h3>
+      <p>Левая половина — тёмная с типографикой и CTA. Правая — фото проекта с floating stat карточкой. Структурированнее, информативнее с первого взгляда.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="C" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:280px;padding:0;overflow:hidden;border-radius:8px 8px 0 0;">
+      <div style="background:#0d0d0d;height:100%;position:relative;overflow:hidden;">
+        <!-- Right half simulated image -->
+        <div style="position:absolute;right:0;top:0;width:48%;bottom:0;background:linear-gradient(160deg,#1e1508 0%,#2e2010 50%,#1a1208 100%);"></div>
+        <div style="position:absolute;right:0;top:0;width:48%;bottom:0;background:repeating-linear-gradient(168deg,transparent,transparent 16px,rgba(255,255,255,0.03) 16px,rgba(255,255,255,0.03) 17px);"></div>
+        <!-- Gradient left -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,#0d0d0d 52%,rgba(13,13,13,0.4) 75%,transparent 100%);"></div>
+        <!-- Ultra minimal nav -->
+        <div style="position:absolute;top:14px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:center;z-index:2;">
+          <span style="font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.5);">RIMALTA</span>
+          <span style="font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);">☰</span>
+        </div>
+        <!-- Section number -->
+        <div style="position:absolute;left:20px;top:50%;transform:translateY(-50%);z-index:2;">
+          <div style="font-size:8px;letter-spacing:4px;text-transform:uppercase;color:#e8c547;margin-bottom:10px;">01 / Advisory</div>
+          <div style="font-size:62px;font-weight:900;color:#fff;line-height:0.88;letter-spacing:-3px;margin-bottom:8px;">UAE<br>RE.</div>
+          <div style="width:30px;height:1px;background:#e8c547;margin-bottom:10px;"></div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.35);margin-bottom:18px;max-width:160px;line-height:1.6;">Discipline over noise.<br>Execution over brochures.</div>
+          <div style="display:flex;gap:8px;">
+            <div style="border:1px solid #e8c547;color:#e8c547;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;">↗ Talk</div>
+            <div style="border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.35);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;">Brief</div>
+          </div>
+        </div>
+        <!-- Bottom scroll hint -->
+        <div style="position:absolute;bottom:14px;left:20px;z-index:2;">
+          <div style="font-size:7px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2);">Scroll</div>
+          <div style="width:1px;height:16px;background:rgba(255,255,255,0.15);margin-top:4px;margin-left:8px;"></div>
+        </div>
+        <!-- Right bottom label -->
+        <div style="position:absolute;bottom:14px;right:20px;z-index:2;text-align:right;">
+          <div style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.2);">Mina · RAK · 2026</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Editorial Minimal</h3>
+      <p>Сверхминималистичная навигация (только логотип + бургер). Аббревиатура "UAE RE." как арт-элемент. Самый характерный и авторский стиль — считывается мгновенно.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:24px;">Клик по карточке или напиши в терминал.</p>

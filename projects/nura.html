@@ -9,7 +9,7 @@
   <style>
     .project-hero {
       position: relative;
-      min-height: 55vh;
+      min-height: 85vh;
       display: flex;
       align-items: flex-end;
       padding: 80px 0;
@@ -18,12 +18,29 @@
     .project-hero-bg {
       position: absolute;
       inset: 0;
-      /* TODO: replace with real project render */
+    }
+    .project-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .project-hero-video-el {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .project-hero-video-el { display: block; }
+      .project-hero-bg img { display: none; }
     }
     .project-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.45) 60%, transparent 100%);
+      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.4) 55%, rgba(13,13,13,0.2) 100%);
     }
     .project-hero-content { position: relative; z-index: 2; }
 
@@ -32,6 +49,9 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--white-06);
+    }
+    @media (min-width: 768px) {
+      .metrics-grid { grid-template-columns: repeat(4, 1fr); }
     }
     .metric-item {
       background: var(--void);
@@ -45,6 +65,63 @@
       flex-direction: column;
       gap: 20px;
     }
+
+    .gallery-section { padding: 60px 0; }
+    .gallery-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--white-06);
+    }
+    @media (min-width: 768px) {
+      .amenities-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .amenity-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .amenity-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .amenity-item:hover img { transform: scale(1.05); }
+    .amenity-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(to top, rgba(13,13,13,0.9), transparent);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .video-section {
+      position: relative;
+      background: #000;
+      overflow: hidden;
+    }
+    .video-section video {
+      width: 100%;
+      display: block;
+      max-height: 70vh;
+      object-fit: cover;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -56,21 +133,31 @@
 
   <main class="page-start">
 
-    <!-- Cooler palette vs SKAI's warm -->
     <section class="project-hero">
-      <div class="project-hero-bg" style="background:linear-gradient(145deg,#0d1318,#0f1a22 40%,#0a1015);"></div>
+      <!-- Mobile fallback: atmospheric night render -->
+      <div class="project-hero-bg">
+        <img src="../assets/media/nura/nura-ext-v1-night.jpg" alt="Nura by RAK Properties at night" loading="eager">
+      </div>
+      <!-- Desktop video -->
+      <video class="project-hero-video-el" autoplay muted loop playsinline poster="../assets/media/nura/nura-ext-v1-night.jpg">
+        <source src="../assets/media/nura/nura-video.mp4" type="video/mp4">
+      </video>
       <div class="project-hero-overlay"></div>
       <div class="container project-hero-content">
         <div class="status-pill reveal" style="margin-bottom:20px;">Under Construction · Q4 2028</div>
         <h1 class="display reveal" style="margin-bottom:16px;">Nura</h1>
-        <p class="body-copy reveal" style="max-width:480px;margin-bottom:32px;">RAK Properties' community-focused Mina address. Sea and lagoon views. Studios from AED 800K with 50/50 payment plan.</p>
-        <a class="btn btn-primary reveal" href="#brief">Request a brief →</a>
+        <p class="body-copy reveal" style="max-width:480px;margin-bottom:32px;">RAK Properties' community-focused Mina address. Sea and lagoon views. Studios to 3BR from AED 800K — the broadest unit mix at Mina.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;" class="reveal">
+          <a class="btn btn-primary" href="#brief">Request a brief →</a>
+          <a class="btn btn-ghost-white" href="../compare.html">Compare with SKAI ↗</a>
+        </div>
       </div>
     </section>
 
-    <section style="padding:60px 0;border-bottom:1px solid var(--white-06);">
-      <div class="container">
-        <div class="metrics-grid cards-row">
+    <!-- Key metrics -->
+    <section style="border-bottom:1px solid var(--white-06);">
+      <div class="container" style="padding:0;">
+        <div class="metrics-grid">
           <div class="metric-item reveal">
             <div class="stat-value" style="font-size:28px;margin-bottom:6px;">AED 800K</div>
             <div class="stat-label">Starting price — studio</div>
@@ -85,12 +172,28 @@
           </div>
           <div class="metric-item reveal">
             <div class="stat-value" style="font-size:28px;margin-bottom:6px;">6–8%</div>
-            <div class="stat-label">Estimated gross yield</div>
+            <div class="stat-label">Est. gross yield</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Exterior gallery -->
+    <section class="gallery-section" style="border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="gallery-label reveal">Exteriors</div>
+        <div class="gallery-grid">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-ext-v1-day.jpg" alt="Nura daytime render" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-ext-v1-night.jpg" alt="Nura night render" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-ext-v2.jpg" alt="Nura exterior view 2" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-ext-v3.jpg" alt="Nura exterior view 3" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-ext-v4.jpg" alt="Nura exterior view 4" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-ext-v5.jpg" alt="Nura exterior view 5" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- About the project + payment plan -->
     <section class="section">
       <div class="container" style="display:grid;gap:56px;">
         <div class="reveal">
@@ -118,6 +221,46 @@
       </div>
     </section>
 
+    <!-- Interior gallery -->
+    <section class="gallery-section" style="border-top:1px solid var(--white-06);border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="gallery-label reveal">Interiors</div>
+        <div class="gallery-grid">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-living.jpg" alt="Nura living area" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-bedroom.jpg" alt="Nura bedroom" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-kitchen.jpg" alt="Nura kitchen" loading="lazy">
+          <img class="gallery-img reveal" src="../assets/media/nura/nura-suite.jpg" alt="Nura suite" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="gallery-section" style="border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:8px;">Amenities</div>
+        <p class="body-copy reveal" style="max-width:480px;margin-bottom:28px;font-size:13px;">Clubhouse, gym, pool, yoga deck, lobby — designed for community life, not just residency.</p>
+        <div class="amenities-grid">
+          <div class="amenity-item reveal">
+            <img src="../assets/media/nura/nura-clubhouse.jpg" alt="Nura clubhouse" loading="lazy">
+            <div class="amenity-label">Clubhouse</div>
+          </div>
+          <div class="amenity-item reveal">
+            <img src="../assets/media/nura/nura-gym.jpg" alt="Nura gym" loading="lazy">
+            <div class="amenity-label">Gym</div>
+          </div>
+          <div class="amenity-item reveal">
+            <img src="../assets/media/nura/nura-lobby.jpg" alt="Nura lobby" loading="lazy">
+            <div class="amenity-label">Lobby</div>
+          </div>
+          <div class="amenity-item reveal">
+            <img src="../assets/media/nura/nura-yoga.jpg" alt="Nura yoga deck" loading="lazy">
+            <div class="amenity-label">Yoga deck</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brief form -->
     <section class="brief-section" id="brief">
       <div class="container">
         <div class="brief-grid">
@@ -132,8 +275,9 @@
               <div class="trust-dot"></div>
               <div class="trust-label">Lower entry than SKAI — AED 800K starting, flexible 50/50 plan</div>
             </div>
-            <div style="margin-top:24px;">
-              <a class="btn btn-ghost-white" href="../compare.html">Compare with SKAI ↗</a>
+            <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px;">
+              <a class="btn btn-primary" href="https://wa.me/971XXXXXXXXXX" target="_blank" rel="noopener" style="text-align:center;">↗ Talk to us on WhatsApp</a>
+              <a class="btn btn-ghost-white" href="../compare.html" style="text-align:center;">Compare with SKAI ↗</a>
             </div>
           </div>
           <form class="brief-form reveal" id="brief-form">
