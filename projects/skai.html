@@ -1,221 +1,168 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKAI | Rimalta</title>
-    <meta name="description" content="SKAI by RAK Properties in South Harbour, Mina. Waterfront premium living with starting prices from AED 877K and multiple payment-plan structures.">
-    <link rel="stylesheet" href="../styles/site.css">
-    <script defer src="../scripts/site.js"></script>
-  </head>
-  <body data-page="buy" data-depth="1">
-    <div class="site-shell">
-      <div data-site-header></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKAI by RAK Properties | Rimalta</title>
+  <meta name="description" content="SKAI by RAK Properties at Mina, Ras Al Khaimah. Studios from AED 877K. Q2 2028 delivery. Rimalta advisory.">
+  <link rel="stylesheet" href="../styles/site.css">
+  <style>
+    .project-hero {
+      position: relative;
+      min-height: 55vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .project-hero-bg {
+      position: absolute;
+      inset: 0;
+      /* TODO: replace with real project render */
+    }
+    .project-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.45) 60%, transparent 100%);
+    }
+    .project-hero-content { position: relative; z-index: 2; }
 
-      <main>
-        <section class="hero" style="--hero-image: url('../assets/media/skai-terrace.jpg')" data-image>
-          <div class="section-inner">
-            <div class="hero-grid">
-              <div class="section-reveal is-visible">
-                <span class="eyebrow">SKAI by RAK Properties</span>
-                <h1 class="display">Calm waterfront living, framed for Mina.</h1>
-                <p class="hero-copy">SKAI reads as composed coastal premium: softer luxury, sea-view living, family-friendly amenities, and a stronger resort-style everyday rhythm.</p>
-                <div class="hero-actions">
-                  <a class="button" href="#lead-form">Request project pack</a>
-                  <a class="button-secondary" href="../projects.html">Back to projects</a>
-                </div>
-              </div>
-              <aside class="metric-panel section-reveal">
-                <div class="metric-strip">
-                  <div class="metric-item">
-                    <strong>South Harbour | Mina</strong>
-                    <span>Waterfront premium residential product positioned around Raha Island and proximity to Mina Harbour.</span>
-                  </div>
-                  <div class="metric-item">
-                    <strong>Q2 2028</strong>
-                    <span>Studios to 3BR penthouses, with starting prices from AED 877K.</span>
-                  </div>
-                  <div class="metric-item">
-                    <strong>Three plan structures</strong>
-                    <span>Standard 50/50, Advanced 70/30, and 2 years post-handover 60/40.</span>
-                  </div>
-                </div>
-              </aside>
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--white-06);
+    }
+    .metric-item {
+      background: var(--void);
+      padding: 28px 24px;
+    }
+
+    .payment-plan {
+      border-left: 2px solid var(--amber);
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .payment-row .stat-value { font-size: 22px; margin-bottom: 4px; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="../scripts/site.js"></script>
+</head>
+<body data-page="projects" data-depth="1">
+
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <section class="project-hero">
+      <div class="project-hero-bg" style="background:linear-gradient(145deg,#1a1510,#2e2212 40%,#1a1208);"></div>
+      <div class="project-hero-overlay"></div>
+      <div class="container project-hero-content">
+        <div class="status-pill reveal" style="margin-bottom:20px;">Under Construction · Q2 2028</div>
+        <h1 class="display reveal" style="margin-bottom:16px;">SKAI</h1>
+        <p class="body-copy reveal" style="max-width:480px;margin-bottom:32px;">RAK Properties' flagship Mina tower. Sea and marina views. Studios from AED 877K with 60/40 payment plan.</p>
+        <a class="btn btn-primary reveal" href="#brief">Request a brief →</a>
+      </div>
+    </section>
+
+    <section style="padding:60px 0;border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="metrics-grid cards-row">
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">AED 877K</div>
+            <div class="stat-label">Starting price — studio</div>
+          </div>
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">Q2 2028</div>
+            <div class="stat-label">Delivery</div>
+          </div>
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">60/40</div>
+            <div class="stat-label">Payment plan</div>
+          </div>
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">7–9%</div>
+            <div class="stat-label">Estimated gross yield</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="display:grid;gap:56px;">
+        <div class="reveal">
+          <div class="eyebrow" style="margin-bottom:16px;">The project</div>
+          <h2 class="section-title" style="margin-bottom:20px;">Premium waterfront living at Mina.</h2>
+          <p class="body-copy" style="max-width:600px;">SKAI is RAK Properties' signature residential tower at Mina — a master-planned coastal district in Ras Al Khaimah. The tower offers studio, 1-bedroom, and 2-bedroom units with sea and marina orientations. Ground-floor amenities include pools, gym, and direct beach access. Short-term rental is permitted under the Mina zone regulations.</p>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow" style="margin-bottom:16px;">Payment plan</div>
+          <div class="payment-plan">
+            <div class="payment-row">
+              <div class="stat-value" style="font-size:22px;margin-bottom:4px;">20%</div>
+              <div class="stat-label">On booking</div>
+            </div>
+            <div class="payment-row">
+              <div class="stat-value" style="font-size:22px;margin-bottom:4px;">40%</div>
+              <div class="stat-label">During construction (installments)</div>
+            </div>
+            <div class="payment-row">
+              <div class="stat-value" style="font-size:22px;margin-bottom:4px;">40%</div>
+              <div class="stat-label">On completion — Q2 2028</div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="grid-4">
-              <article class="stat-card section-reveal"><strong>Developer</strong><p>RAK Properties</p></article>
-              <article class="stat-card section-reveal"><strong>Completion</strong><p>Q2 2028</p></article>
-              <article class="stat-card section-reveal"><strong>Entry</strong><p>From AED 877K</p></article>
-              <article class="stat-card section-reveal"><strong>Typologies</strong><p>Studio to 3BR penthouses</p></article>
+    <section class="brief-section" id="brief">
+      <div class="container">
+        <div class="brief-grid">
+          <div class="brief-trust reveal">
+            <div class="eyebrow" style="margin-bottom:24px;">SKAI brief</div>
+            <h2 class="section-title" style="margin-bottom:32px;">Tell us what you're looking for and we'll walk you through the numbers.</h2>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Pricing verified directly with RAK Properties — no inflated agent margin</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Payment plan walkthroughs on request — no pressure, no deadline</div>
+            </div>
+            <div style="margin-top:24px;">
+              <a class="btn btn-ghost-white" href="../compare.html">Compare with Nura ↗</a>
             </div>
           </div>
-        </section>
-
-        <section class="section">
-          <div class="section-inner">
-            <div class="project-layout">
-              <div class="stack">
-                <div class="section-heading section-reveal">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Project overview</span>
-                  <h2>Waterfront premium with a quieter emotional register.</h2>
-                  <p>SKAI does not read like loud trophy inventory. The stronger story is calm luxury, terrace-led living, sea views, and a broader coastal destination ecosystem around Mina Harbour, Mina Boulevard, the Yacht Club, and the surrounding resort layer.</p>
-                </div>
-                <div class="grid-2">
-                  <article class="feature-card section-reveal">
-                    <strong>Positioning</strong>
-                    <p>Inspired by the ocean, calmer than a typical Dubai-style loud luxury pitch, and suitable for end-users, second-home buyers, and investors.</p>
-                  </article>
-                  <article class="feature-card section-reveal">
-                    <strong>Location story</strong>
-                    <p>Raha Island and South Harbour positioning with Mina as the surrounding destination system, not just a standalone building narrative.</p>
-                  </article>
-                </div>
-              </div>
-              <div class="media-card section-reveal">
-                <img src="../assets/media/skai-exterior.jpg" alt="SKAI exterior">
-                <div class="media-label">
-                  <span>Harbour living redefined</span>
-                  <span>Sea-view identity</span>
-                </div>
-              </div>
+          <form class="brief-form reveal" id="brief-form">
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" id="name" name="name" type="text" required>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="comparison-grid">
-              <article class="comparison-card section-reveal">
-                <strong>Unit mix</strong>
-                <p>Studio, 1BR Premium, 1BR Chalet, 2BR, and 3BR penthouses.</p>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Starting prices</strong>
-                <p>Studio from AED 877K, 1BR Premium from AED 1.7M, 1BR Chalet from AED 1.9M, 2BR from AED 2.4M, 3BR penthouses from AED 3.9M.</p>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Amenity read</strong>
-                <p>SKAI Club, Zen Garden, Outdoor Gym, Padel Court, pool, Yoga Pavilion, BBQ Area, Junior Playland, and a strong lobby and lounge layer.</p>
-              </article>
+            <div class="form-field">
+              <label class="form-label" for="intent">I am looking to</label>
+              <select class="form-input form-select" id="intent" name="intent" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Buy to invest</option>
+                <option>Buy to live</option>
+                <option>Explore options</option>
+              </select>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="comparison-table surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Payment plans</span>
-              <h2>Three commercial structures with different pricing logic.</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Plan</th>
-                    <th>Down payment</th>
-                    <th>Core behavior</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Standard 50/50</td>
-                    <td>10%</td>
-                    <td>Structured installments through construction with 50% on completion.</td>
-                  </tr>
-                  <tr>
-                    <td>Advanced 70/30</td>
-                    <td>10%</td>
-                    <td>Heavier construction-period payment with 30% on completion.</td>
-                  </tr>
-                  <tr>
-                    <td>2 years post-handover 60/40</td>
-                    <td>10%</td>
-                    <td>Post-completion extension with smaller installments continuing after handover.</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="form-field">
+              <label class="form-label" for="budget">Budget (AED)</label>
+              <input class="form-input" id="budget" name="budget" type="text" placeholder="e.g. 900K–1.2M">
             </div>
-          </div>
-        </section>
+            <button class="btn btn-primary" type="submit" style="margin-top:8px;">Send brief →</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="page-grid">
-              <div class="media-card section-reveal">
-                <img src="../assets/media/skai-living.jpg" alt="SKAI living area">
-                <div class="media-label">
-                  <span>Sea-view interiors</span>
-                  <span>Soft, warm detailing</span>
-                </div>
-              </div>
-              <div class="media-card section-reveal">
-                <img src="../assets/media/skai-lobby.jpg" alt="SKAI lobby">
-                <div class="media-label">
-                  <span>Arrival experience</span>
-                  <span>Branded lobby layer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+  </main>
 
-        <section class="section" id="lead-form">
-          <div class="section-inner">
-            <div class="form-card surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">SKAI advisory</span>
-              <h2>Request the SKAI brief</h2>
-              <p class="lede">Tell us whether this is for end use, second home, or investment. We will frame the next conversation around the right commercial angle.</p>
-              <form class="form-grid" data-mail-form>
-                <div class="field">
-                  <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel">
-                </div>
-                <div class="field">
-                  <label for="interest">Interest</label>
-                  <select id="interest" name="interest">
-                    <option>SKAI</option>
-                    <option>Book Advisory Call</option>
-                    <option>Investment discussion</option>
-                    <option>End-user purchase</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="budget">Budget</label>
-                  <input id="budget" name="budget" type="text" placeholder="AED range">
-                </div>
-                <div class="field">
-                  <label for="timeline">Timing</label>
-                  <input id="timeline" name="timeline" type="text" placeholder="Now, this quarter, flexible">
-                </div>
-                <div class="field field-full">
-                  <label for="message">Notes</label>
-                  <textarea id="message" name="message" placeholder="Tell us what matters most: price entry, sea views, lifestyle, or payment-plan structure."></textarea>
-                </div>
-                <div class="field-full">
-                  <div class="form-actions">
-                    <button class="button" type="submit">Send request</button>
-                    <span class="form-note">First deploy routes through a pre-filled advisory email.</span>
-                  </div>
-                  <div class="form-status" data-form-status></div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
+  <div data-site-footer></div>
 
-      <div data-site-footer></div>
-    </div>
-  </body>
+</body>
 </html>

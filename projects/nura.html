@@ -1,216 +1,179 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nura | Rimalta</title>
-    <meta name="description" content="Nura by RAK Properties in Downtown Mina. Design-led urban-island living with starting prices from AED 800K.">
-    <link rel="stylesheet" href="../styles/site.css">
-    <script defer src="../scripts/site.js"></script>
-  </head>
-  <body data-page="buy" data-depth="1">
-    <div class="site-shell">
-      <div data-site-header></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nura by RAK Properties | Rimalta</title>
+  <meta name="description" content="Nura by RAK Properties at Mina, Ras Al Khaimah. Studios from AED 800K. Q4 2028 delivery. Rimalta advisory.">
+  <link rel="stylesheet" href="../styles/site.css">
+  <style>
+    .project-hero {
+      position: relative;
+      min-height: 55vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .project-hero-bg {
+      position: absolute;
+      inset: 0;
+      /* TODO: replace with real project render */
+    }
+    .project-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.45) 60%, transparent 100%);
+    }
+    .project-hero-content { position: relative; z-index: 2; }
 
-      <main>
-        <section class="hero" style="--hero-image: url('../assets/media/nura-exterior-night.jpg')" data-image>
-          <div class="section-inner">
-            <div class="hero-grid">
-              <div class="section-reveal is-visible">
-                <span class="eyebrow">Nura by RAK Properties</span>
-                <h1 class="display">Downtown island living with a denser amenity story.</h1>
-                <p class="hero-copy">Nura is positioned as the social and design-led core of Downtown Mina: boulevard energy, ground-floor retail, and a more activated amenity program than a retreat-led coastal address.</p>
-                <div class="hero-actions">
-                  <a class="button" href="#lead-form">Request project pack</a>
-                  <a class="button-secondary" href="../projects.html">Back to projects</a>
-                </div>
-              </div>
-              <aside class="metric-panel section-reveal">
-                <div class="metric-strip">
-                  <div class="metric-item">
-                    <strong>Downtown Mina</strong>
-                    <span>Framed as the island's urban center with walking, gathering, harbour access, and a stronger social core.</span>
-                  </div>
-                  <div class="metric-item">
-                    <strong>Q1 2029</strong>
-                    <span>Studios through 4BR penthouses, with public entry from AED 800K.</span>
-                  </div>
-                  <div class="metric-item">
-                    <strong>40/60 and 60/40</strong>
-                    <span>Two primary payment-plan labels shaping the investor and buyer conversation.</span>
-                  </div>
-                </div>
-              </aside>
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--white-06);
+    }
+    .metric-item {
+      background: var(--void);
+      padding: 28px 24px;
+    }
+
+    .payment-plan {
+      border-left: 2px solid var(--amber);
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="../scripts/site.js"></script>
+</head>
+<body data-page="projects" data-depth="1">
+
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <!-- Cooler palette vs SKAI's warm -->
+    <section class="project-hero">
+      <div class="project-hero-bg" style="background:linear-gradient(145deg,#0d1318,#0f1a22 40%,#0a1015);"></div>
+      <div class="project-hero-overlay"></div>
+      <div class="container project-hero-content">
+        <div class="status-pill reveal" style="margin-bottom:20px;">Under Construction · Q4 2028</div>
+        <h1 class="display reveal" style="margin-bottom:16px;">Nura</h1>
+        <p class="body-copy reveal" style="max-width:480px;margin-bottom:32px;">RAK Properties' community-focused Mina address. Sea and lagoon views. Studios from AED 800K with 50/50 payment plan.</p>
+        <a class="btn btn-primary reveal" href="#brief">Request a brief →</a>
+      </div>
+    </section>
+
+    <section style="padding:60px 0;border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="metrics-grid cards-row">
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">AED 800K</div>
+            <div class="stat-label">Starting price — studio</div>
+          </div>
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">Q4 2028</div>
+            <div class="stat-label">Delivery</div>
+          </div>
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">50/50</div>
+            <div class="stat-label">Payment plan</div>
+          </div>
+          <div class="metric-item reveal">
+            <div class="stat-value" style="font-size:28px;margin-bottom:6px;">6–8%</div>
+            <div class="stat-label">Estimated gross yield</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="display:grid;gap:56px;">
+        <div class="reveal">
+          <div class="eyebrow" style="margin-bottom:16px;">The project</div>
+          <h2 class="section-title" style="margin-bottom:20px;">Community living on the Mina lagoon.</h2>
+          <p class="body-copy" style="max-width:600px;">Nura is RAK Properties' community-oriented residential development at Mina. Studios, 1BR, 2BR, and 3BR units available — the broadest unit mix in the Mina portfolio. Lagoon and sea views. Clubhouse, pool, gym, and family-friendly amenities. Suitable for owner-occupiers and long-term rental investors.</p>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow" style="margin-bottom:16px;">Payment plan</div>
+          <div class="payment-plan">
+            <div>
+              <div class="stat-value" style="font-size:22px;margin-bottom:4px;">10%</div>
+              <div class="stat-label">On booking</div>
+            </div>
+            <div>
+              <div class="stat-value" style="font-size:22px;margin-bottom:4px;">40%</div>
+              <div class="stat-label">During construction (installments)</div>
+            </div>
+            <div>
+              <div class="stat-value" style="font-size:22px;margin-bottom:4px;">50%</div>
+              <div class="stat-label">On completion — Q4 2028</div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="grid-4">
-              <article class="stat-card section-reveal"><strong>Developer</strong><p>RAK Properties</p></article>
-              <article class="stat-card section-reveal"><strong>Completion</strong><p>Q1 2029</p></article>
-              <article class="stat-card section-reveal"><strong>Entry</strong><p>From AED 800K</p></article>
-              <article class="stat-card section-reveal"><strong>Typologies</strong><p>Studio to 4BR penthouses</p></article>
+    <section class="brief-section" id="brief">
+      <div class="container">
+        <div class="brief-grid">
+          <div class="brief-trust reveal">
+            <div class="eyebrow" style="margin-bottom:24px;">Nura brief</div>
+            <h2 class="section-title" style="margin-bottom:32px;">Leave a brief and we'll walk you through the unit options.</h2>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">3BR units available — ideal for families or investors targeting longer leases</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Lower entry than SKAI — AED 800K starting, flexible 50/50 plan</div>
+            </div>
+            <div style="margin-top:24px;">
+              <a class="btn btn-ghost-white" href="../compare.html">Compare with SKAI ↗</a>
             </div>
           </div>
-        </section>
-
-        <section class="section">
-          <div class="section-inner">
-            <div class="project-layout">
-              <div class="stack">
-                <div class="section-heading section-reveal">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Project overview</span>
-                  <h2>City-meets-island premium for buyers who want movement.</h2>
-                  <p>Nura is not the retreat-only story. Its stronger read is design-led downtown living by the water, supported by retail, boulevard adjacency, and one of the densest amenity stacks in the Mina set.</p>
-                </div>
-                <div class="grid-2">
-                  <article class="feature-card section-reveal">
-                    <strong>Positioning</strong>
-                    <p>Downtown Mina, walking distance to harbour and marina, with a more activated urban-island lifestyle than SKAI.</p>
-                  </article>
-                  <article class="feature-card section-reveal">
-                    <strong>Use case</strong>
-                    <p>Suitable for buyers and investors who want amenity density, design language, and stronger everyday activation.</p>
-                  </article>
-                </div>
-              </div>
-              <div class="media-card section-reveal">
-                <img src="../assets/media/nura-exterior-day.jpg" alt="Nura exterior">
-                <div class="media-label">
-                  <span>Downtown Mina</span>
-                  <span>Urban-island address</span>
-                </div>
-              </div>
+          <form class="brief-form reveal" id="brief-form">
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" id="name" name="name" type="text" required>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="comparison-grid">
-              <article class="comparison-card section-reveal">
-                <strong>Unit mix</strong>
-                <p>Studios, premium studios, 1BR suites and premiums, 2BR suites and premiums, 3BR premiums, and 4BR penthouses.</p>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Starting prices</strong>
-                <p>Studios from AED 800K, premium studios from AED 1M, 1BR suite from AED 1.24M, 1BR premium from AED 1.52M.</p>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Amenity density</strong>
-                <p>Padel, pools, yoga, jogging track, clubhouse, coworking, art gallery, skate garden, BBQ pavilion, pet area, and more.</p>
-              </article>
+            <div class="form-field">
+              <label class="form-label" for="intent">I am looking to</label>
+              <select class="form-input form-select" id="intent" name="intent" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Buy to invest</option>
+                <option>Buy to live</option>
+                <option>Explore options</option>
+              </select>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="comparison-table surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Payment plans</span>
-              <h2>Two public plan labels for different buyer behavior.</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Plan</th>
-                    <th>Down payment</th>
-                    <th>Core behavior</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Standard 40/60</td>
-                    <td>10%</td>
-                    <td>Lighter construction-period commitment with 60% on handover.</td>
-                  </tr>
-                  <tr>
-                    <td>Special 60/40</td>
-                    <td>10%</td>
-                    <td>Heavier pre-handover contribution with 40% on handover.</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="form-field">
+              <label class="form-label" for="unit">Unit type interest</label>
+              <select class="form-input form-select" id="unit" name="unit">
+                <option value="" disabled selected>Select one</option>
+                <option>Studio</option>
+                <option>1 Bedroom</option>
+                <option>2 Bedroom</option>
+                <option>3 Bedroom</option>
+                <option>Undecided</option>
+              </select>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="page-grid">
-              <div class="media-card section-reveal">
-                <img src="../assets/media/nura-lobby.jpg" alt="Nura lobby">
-                <div class="media-label">
-                  <span>8m lobby</span>
-                  <span>Retail and arrival layer</span>
-                </div>
-              </div>
-              <div class="media-card section-reveal">
-                <img src="../assets/media/nura-clubhouse.jpg" alt="Nura clubhouse">
-                <div class="media-label">
-                  <span>Clubhouse and social layer</span>
-                  <span>Amenity-rich positioning</span>
-                </div>
-              </div>
+            <div class="form-field">
+              <label class="form-label" for="budget">Budget (AED)</label>
+              <input class="form-input" id="budget" name="budget" type="text" placeholder="e.g. 800K–1.2M">
             </div>
-          </div>
-        </section>
+            <button class="btn btn-primary" type="submit" style="margin-top:8px;">Send brief →</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-        <section class="section" id="lead-form">
-          <div class="section-inner">
-            <div class="form-card surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Nura advisory</span>
-              <h2>Request the Nura brief</h2>
-              <p class="lede">Share your intent and we will frame the next conversation around fit, amenity logic, and plan structure.</p>
-              <form class="form-grid" data-mail-form>
-                <div class="field">
-                  <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel">
-                </div>
-                <div class="field">
-                  <label for="interest">Interest</label>
-                  <select id="interest" name="interest">
-                    <option>Nura</option>
-                    <option>Book Advisory Call</option>
-                    <option>Investment discussion</option>
-                    <option>End-user purchase</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="budget">Budget</label>
-                  <input id="budget" name="budget" type="text" placeholder="AED range">
-                </div>
-                <div class="field">
-                  <label for="timeline">Timing</label>
-                  <input id="timeline" name="timeline" type="text" placeholder="Now, this year, flexible">
-                </div>
-                <div class="field field-full">
-                  <label for="message">Notes</label>
-                  <textarea id="message" name="message" placeholder="Tell us whether you care more about price entry, downtown location, amenity density, or investor use case."></textarea>
-                </div>
-                <div class="field-full">
-                  <div class="form-actions">
-                    <button class="button" type="submit">Send request</button>
-                    <span class="form-note">First deploy routes through a pre-filled advisory email.</span>
-                  </div>
-                  <div class="form-status" data-form-status></div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
+  </main>
 
-      <div data-site-footer></div>
-    </div>
-  </body>
+  <div data-site-footer></div>
+
+</body>
 </html>
