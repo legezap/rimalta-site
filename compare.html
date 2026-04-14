@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKAI vs Nura — Compare | Rimalta</title>
+  <meta name="description" content="Compare SKAI and Nura by RAK Properties. Side-by-side metrics for investors and end-users.">
+  <link rel="stylesheet" href="./styles/site.css">
+  <style>
+    .profile-toggle {
+      display: inline-flex;
+      border: 1px solid var(--white-12);
+      overflow: hidden;
+    }
+
+    .profile-btn {
+      padding: 10px 24px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white-50);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .profile-btn.is-active {
+      background: var(--amber);
+      color: var(--void);
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      background: var(--white-06);
+    }
+
+    @media (min-width: 640px) {
+      .compare-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .compare-card {
+      background: var(--surface);
+      padding: 32px 28px;
+    }
+
+    .compare-card-title {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .compare-card-sub {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 28px;
+    }
+
+    .compare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--white-06);
+    }
+
+    .compare-row:last-child { border-bottom: none; }
+
+    .compare-key {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      flex-shrink: 0;
+    }
+
+    .compare-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      text-align: right;
+    }
+
+    .reco-strip {
+      border: 1px solid var(--white-12);
+      border-left: 3px solid var(--amber);
+      padding: 24px 28px;
+      background: var(--surface);
+    }
+
+    .reco-strip p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--white-50);
+    }
+
+    .reco-strip strong { color: var(--white); }
+
+    /* Hide/show metric sections */
+    .investor-metrics, .enduser-metrics { display: none; }
+    [data-profile="investor"] .investor-metrics { display: block; }
+    [data-profile="enduser"] .enduser-metrics { display: block; }
+  </style>
+  <script defer src="./scripts/site.js"></script>
+</head>
+<body data-page="compare" data-depth="0">
+
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <section class="section">
+      <div class="container">
+
+        <div class="reveal" style="margin-bottom:40px;">
+          <div class="eyebrow" style="margin-bottom:16px;">Project comparison</div>
+          <h1 class="headline" style="margin-bottom:24px;">SKAI vs Nura.<br>Which fits your goals?</h1>
+          <div class="profile-toggle" id="profile-toggle">
+            <button class="profile-btn is-active" data-profile="investor">I'm investing</button>
+            <button class="profile-btn" data-profile="enduser">I'm buying to live</button>
+          </div>
+        </div>
+
+        <!-- Cards container — data-profile drives visibility -->
+        <div class="compare-grid reveal" id="compare-content" data-profile="investor">
+
+          <!-- SKAI -->
+          <div class="compare-card">
+            <div class="compare-card-title">SKAI</div>
+            <div class="compare-card-sub">RAK Properties · Mina</div>
+            <div class="compare-row"><div class="compare-key">Developer</div><div class="compare-val">RAK Properties</div></div>
+            <div class="compare-row"><div class="compare-key">Location</div><div class="compare-val">Mina, RAK</div></div>
+            <div class="compare-row"><div class="compare-key">Delivery</div><div class="compare-val">Q2 2028</div></div>
+            <div class="compare-row"><div class="compare-key">Unit types</div><div class="compare-val">Studios, 1BR, 2BR</div></div>
+            <div class="compare-row"><div class="compare-key">Starting price</div><div class="compare-val">AED 877K</div></div>
+            <div class="investor-metrics">
+              <div class="compare-row"><div class="compare-key">Rental yield (est.)</div><div class="compare-val">7–9% gross</div></div>
+              <div class="compare-row"><div class="compare-key">Capital appreciation</div><div class="compare-val">Strong — Mina waterfront</div></div>
+              <div class="compare-row"><div class="compare-key">Payment plan</div><div class="compare-val">60/40 on completion</div></div>
+              <div class="compare-row"><div class="compare-key">Liquidity</div><div class="compare-val">High (touristic zone)</div></div>
+            </div>
+            <div class="enduser-metrics">
+              <div class="compare-row"><div class="compare-key">Layouts</div><div class="compare-val">Open-plan, floor-to-ceiling</div></div>
+              <div class="compare-row"><div class="compare-key">Views</div><div class="compare-val">Sea + Marina</div></div>
+              <div class="compare-row"><div class="compare-key">Amenities</div><div class="compare-val">Pool, gym, beach access</div></div>
+              <div class="compare-row"><div class="compare-key">Positioning</div><div class="compare-val">Premium resort lifestyle</div></div>
+              <div class="compare-row"><div class="compare-key">Move-in</div><div class="compare-val">Q2 2028</div></div>
+            </div>
+          </div>
+
+          <!-- NURA -->
+          <div class="compare-card">
+            <div class="compare-card-title">Nura</div>
+            <div class="compare-card-sub">RAK Properties · Mina</div>
+            <div class="compare-row"><div class="compare-key">Developer</div><div class="compare-val">RAK Properties</div></div>
+            <div class="compare-row"><div class="compare-key">Location</div><div class="compare-val">Mina, RAK</div></div>
+            <div class="compare-row"><div class="compare-key">Delivery</div><div class="compare-val">Q4 2028</div></div>
+            <div class="compare-row"><div class="compare-key">Unit types</div><div class="compare-val">Studios, 1BR, 2BR, 3BR</div></div>
+            <div class="compare-row"><div class="compare-key">Starting price</div><div class="compare-val">AED 800K</div></div>
+            <div class="investor-metrics">
+              <div class="compare-row"><div class="compare-key">Rental yield (est.)</div><div class="compare-val">6–8% gross</div></div>
+              <div class="compare-row"><div class="compare-key">Capital appreciation</div><div class="compare-val">Good — broader unit mix</div></div>
+              <div class="compare-row"><div class="compare-key">Payment plan</div><div class="compare-val">50/50 on completion</div></div>
+              <div class="compare-row"><div class="compare-key">Liquidity</div><div class="compare-val">Medium-High</div></div>
+            </div>
+            <div class="enduser-metrics">
+              <div class="compare-row"><div class="compare-key">Layouts</div><div class="compare-val">Spacious, 3BR available</div></div>
+              <div class="compare-row"><div class="compare-key">Views</div><div class="compare-val">Sea + Lagoon</div></div>
+              <div class="compare-row"><div class="compare-key">Amenities</div><div class="compare-val">Lagoon pool, clubhouse, gym</div></div>
+              <div class="compare-row"><div class="compare-key">Positioning</div><div class="compare-val">Community-oriented living</div></div>
+              <div class="compare-row"><div class="compare-key">Move-in</div><div class="compare-val">Q4 2028</div></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Recommendation strip -->
+        <div class="reco-strip reveal" id="reco-strip" style="margin-top:2px;">
+          <p id="reco-text"><strong>SKAI</strong> is the stronger rental-yield play for short-term investors. <strong>Nura</strong> suits investors targeting longer leases and families — broader unit mix, slightly lower entry. Both are in the same master plan so macro risk is identical.</p>
+        </div>
+
+        <!-- Brief form -->
+        <div style="margin-top:80px;" class="reveal">
+          <div class="eyebrow" style="margin-bottom:24px;">Ready to move forward?</div>
+          <h2 class="section-title" style="margin-bottom:40px;">Leave a brief and we'll match you to the right project.</h2>
+          <form class="brief-form" id="brief-form" style="max-width:520px;">
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" id="name" name="name" type="text" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="intent">I am looking to</label>
+              <select class="form-input form-select" id="intent" name="intent" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Buy</option>
+                <option>Invest</option>
+                <option>Lease</option>
+                <option>List my property</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="budget">Budget range (AED)</label>
+              <input class="form-input" id="budget" name="budget" type="text" placeholder="e.g. 900K–1.2M">
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="notes">Anything else</label>
+              <input class="form-input" id="notes" name="notes" type="text" placeholder="Timeline, preference, questions">
+            </div>
+            <button class="btn btn-primary" type="submit" style="margin-top:8px;">Send brief →</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div data-site-footer></div>
+
+  <script>
+    (function () {
+      const INVESTOR_RECO = '<strong>SKAI</strong> is the stronger rental-yield play for short-term investors. <strong>Nura</strong> suits investors targeting longer leases and families — broader unit mix, slightly lower entry. Both are in the same master plan so macro risk is identical.';
+      const ENDUSER_RECO = '<strong>SKAI</strong> suits buyers who want a resort-lifestyle lock-and-leave. <strong>Nura</strong> is the better fit if you need a 3-bedroom or a community-focused environment. If view is your priority, SKAI\'s sea + marina orientation is hard to beat.';
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggle = document.getElementById('profile-toggle');
+        const content = document.getElementById('compare-content');
+        const recoText = document.getElementById('reco-text');
+        if (!toggle) return;
+
+        toggle.querySelectorAll('.profile-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const profile = btn.dataset.profile;
+            toggle.querySelectorAll('.profile-btn').forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+            content.dataset.profile = profile;
+            recoText.innerHTML = profile === 'investor' ? INVESTOR_RECO : ENDUSER_RECO;
+          });
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

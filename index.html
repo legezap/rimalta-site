@@ -1,342 +1,485 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rimalta | Premium property execution, run with discipline.</title>
-    <meta name="description" content="Rimalta is a premium UAE real estate company combining calm advisory, sharper follow-up, and a disciplined operating system for owners, buyers, tenants, and investors.">
-    <link rel="stylesheet" href="./styles/site.css">
-    <script defer src="./scripts/site.js"></script>
-  </head>
-  <body data-page="home" data-depth="0">
-    <div class="site-shell">
-      <div data-site-header></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rimalta | UAE Real Estate Advisory — Ras Al Khaimah</title>
+  <meta name="description" content="Rimalta is a UAE real estate advisory brokerage in Ras Al Khaimah. Disciplined execution for owners, buyers, and investors. SKAI and Nura by RAK Properties.">
+  <link rel="stylesheet" href="./styles/site.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - var(--header-h));
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+    }
 
-      <main>
-        <section class="hero" style="--hero-image: url('./assets/media/skai-terrace.jpg')" data-image>
-          <div class="section-inner">
-            <div class="hero-grid">
-              <div class="section-reveal is-visible">
-                <span class="eyebrow">Premium UAE brokerage</span>
-                <h1 class="display">Premium property execution, run with discipline.</h1>
-                <p class="hero-copy">Rimalta helps owners, buyers, tenants, and investors move faster through the UAE property market with clearer qualification, stronger follow-up, and calmer commercial control.</p>
-                <div class="hero-actions">
-                  <a class="button" href="#lead-form">Book Advisory Call</a>
-                  <a class="button-secondary" href="./projects.html">Explore Projects</a>
-                </div>
-              </div>
-              <aside class="metric-panel section-reveal">
-                <div class="metric-strip">
-                  <div class="metric-item">
-                    <strong>Fast response</strong>
-                    <span>Portal, WhatsApp, and call-led intake handled with more discipline.</span>
-                  </div>
-                  <div class="metric-item">
-                    <strong>Owner visibility</strong>
-                    <span>Listing execution, feedback loops, and structured reporting built into the service.</span>
-                  </div>
-                  <div class="metric-item">
-                    <strong>Cross-border clarity</strong>
-                    <span>Better process for international buyers, project comparison, and deal progression.</span>
-                  </div>
-                </div>
-              </aside>
+    /* Mobile: full-width text column over photo bg */
+    .hero-left {
+      flex: 0 0 100%;
+      padding: 60px var(--gutter) 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 768px) {
+      .hero-left {
+        flex: 0 0 52%;
+        padding: 80px 48px;
+        justify-content: space-between;
+      }
+    }
+
+    .hero-top { display: flex; flex-direction: column; }
+
+    .hero-eyebrow { margin-bottom: 20px; }
+
+    .hero-display { margin-bottom: 24px; }
+
+    .hero-body {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--white-50);
+      max-width: 380px;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* Mobile: dark overlay so text is readable over photo */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.6) 50%, rgba(13,13,13,0.35) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media (min-width: 768px) { .hero::before { display: none; } }
+
+    /* Photo behind on mobile, right column on desktop */
+    .hero-photo-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(172deg, transparent, transparent 28px, rgba(255,255,255,0.015) 28px, rgba(255,255,255,0.015) 29px),
+        linear-gradient(160deg, #1a1208 0%, #2e2212 30%, #3d2e16 55%, #1e1710 80%, #0f0d08 100%);
+      /* TODO: replace with real project photo */
+    }
+
+    @media (min-width: 768px) { .hero-photo-bg { display: none; } }
+
+    .hero-right {
+      display: none;
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) { .hero-right { display: block; } }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(172deg, transparent, transparent 28px, rgba(255,255,255,0.015) 28px, rgba(255,255,255,0.015) 29px),
+        linear-gradient(160deg, #1a1208 0%, #2e2212 30%, #3d2e16 55%, #1e1710 80%, #0f0d08 100%);
+      /* TODO: replace with real project photo */
+    }
+
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--void) 0%, rgba(13,13,13,0.2) 35%, transparent 60%);
+    }
+
+    .hero-stat {
+      position: absolute;
+      bottom: 40px;
+      right: 32px;
+      z-index: 3;
+      min-width: 160px;
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 48px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .scroll-hint-text {
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .scroll-hint-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+    }
+
+    .hero-project-tag {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      z-index: 3;
+      text-align: right;
+    }
+
+    .hero-project-tag span {
+      display: block;
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      line-height: 1.8;
+    }
+
+    /* ── PATHS ── */
+    .path-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--white-06);
+    }
+
+    @media (min-width: 480px) { .path-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 768px) { .path-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .path-item {
+      background: var(--void);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .path-num {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .path-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--white);
+    }
+
+    .path-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .path-link {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      transition: color 0.2s;
+      margin-top: 4px;
+    }
+
+    .path-link:hover { color: var(--amber); }
+
+    /* ── PROJECT CARDS ── */
+    .project-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      background: var(--white-06);
+    }
+
+    @media (min-width: 640px) { .project-cards { grid-template-columns: repeat(2, 1fr); } }
+
+    .project-card {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--surface);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 24px;
+    }
+
+    .project-card-photo {
+      position: absolute;
+      inset: 0;
+      /* TODO: replace with real project render */
+    }
+
+    .project-card-photo.skai {
+      background: linear-gradient(145deg, #1a1510 0%, #2a1f0e 40%, #1a1208 100%);
+    }
+
+    .project-card-photo.nura {
+      background: linear-gradient(145deg, #0d1318 0%, #0f1a22 40%, #0a1015 100%);
+    }
+
+    .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.3) 60%, transparent 100%);
+    }
+
+    .project-card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .project-card-name {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .project-card-sub {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .project-card-link {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      transition: opacity 0.2s;
+    }
+
+    .project-card-link:hover { opacity: 0.7; }
+
+    .compare-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--surface);
+      border-top: 1px solid var(--white-06);
+    }
+
+    .compare-strip p {
+      font-size: 12px;
+      color: var(--white-50);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="./scripts/site.js"></script>
+</head>
+<body data-page="home" data-depth="0">
+
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-photo-bg"></div>
+      <div class="hero-left">
+        <div class="hero-top">
+          <div class="eyebrow hero-eyebrow">Ras Al Khaimah · UAE</div>
+          <div class="display hero-display">UAE<br><em>RE.</em></div>
+          <p class="hero-body">Advisory built for owners, buyers, and investors who want real execution — not brochure noise or guesswork.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#brief">Book Advisory Call</a>
+          <a class="btn btn-ghost-white" href="#brief">Leave a brief ↓</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo"></div>
+        <div class="stat-card hero-stat">
+          <div class="stat-value">AED 800K</div>
+          <div class="stat-label">Entry · Mina · RAK</div>
+        </div>
+        <div class="hero-scroll-hint">
+          <div class="scroll-hint-text">Scroll</div>
+          <div class="scroll-hint-line"></div>
+        </div>
+        <div class="hero-project-tag">
+          <span>SKAI · NURA</span>
+          <span>RAK Properties</span>
+          <span>Mina · 2028–2029</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATHS -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:40px;">
+          <div class="eyebrow" style="margin-bottom:16px;">Choose your path</div>
+          <h2 class="section-title">Built for buyers, tenants, owners, and investors.</h2>
+        </div>
+        <div class="path-grid">
+          <div class="path-item">
+            <div class="path-num">01</div>
+            <div class="path-title">For Owners</div>
+            <div class="path-copy">Structured intake, lead handling, and reporting. Real next steps, not agent memory.</div>
+            <a class="path-link" href="./owners.html">Owner services ↗</a>
+          </div>
+          <div class="path-item">
+            <div class="path-num">02</div>
+            <div class="path-title">Invest</div>
+            <div class="path-copy">Project comparison, payment-plan clarity, and calmer commercial control.</div>
+            <a class="path-link" href="./invest.html">Investor path ↗</a>
+          </div>
+          <div class="path-item">
+            <div class="path-num">03</div>
+            <div class="path-title">Buy</div>
+            <div class="path-copy">SKAI and Nura. Two Mina projects, one advisory layer.</div>
+            <a class="path-link" href="./projects.html">View projects ↗</a>
+          </div>
+          <div class="path-item">
+            <div class="path-num">04</div>
+            <div class="path-title">Lease</div>
+            <div class="path-copy">Responsive matching with real follow-through.</div>
+            <a class="path-link" href="./lease.html">Leasing advisory ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:40px;">
+          <div class="eyebrow" style="margin-bottom:16px;">Current projects</div>
+          <h2 class="section-title">Two Mina addresses. One advisory layer.</h2>
+        </div>
+        <div class="project-cards">
+          <div class="project-card reveal">
+            <div class="project-card-photo skai"></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="status-pill" style="margin-bottom:14px;">Under Construction · Q2 2028</div>
+              <div class="project-card-name">SKAI</div>
+              <div class="project-card-sub">RAK Properties · Mina · Studios from AED 877K</div>
+              <a class="project-card-link" href="./projects/skai.html">View project →</a>
             </div>
           </div>
-        </section>
-
-        <section class="section" id="paths">
-          <div class="section-inner">
-            <div class="section-heading section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Choose your path</span>
-              <h2>Built for buyers, tenants, owners, and investors who value precision.</h2>
-              <p>We are not building a portal clone. We are building a premium advisory brokerage with a tighter operating machine behind every inquiry, viewing, and deal.</p>
-            </div>
-            <div class="path-grid">
-              <article class="path-card section-reveal">
-                <strong>Buy</strong>
-                <p>Curated ready and primary-market opportunities, with sharper project comparison and less noise.</p>
-                <a href="./projects.html">View current opportunities</a>
-              </article>
-              <article class="path-card section-reveal">
-                <strong>Lease</strong>
-                <p>Responsive rental guidance with cleaner matching, tighter follow-up, and better community context.</p>
-                <a href="#lead-form">Request a leasing brief</a>
-              </article>
-              <article class="path-card section-reveal">
-                <strong>Sell</strong>
-                <p>Structured listing intake, stronger lead handling, and owner reporting that makes progress visible.</p>
-                <a href="./owners.html#valuation">Request valuation</a>
-              </article>
-              <article class="path-card section-reveal">
-                <strong>Invest</strong>
-                <p>Guided project discovery for end-users and investors who want clearer payment, timing, and market logic.</p>
-                <a href="./invest.html">See the investor path</a>
-              </article>
+          <div class="project-card reveal">
+            <div class="project-card-photo nura"></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <div class="status-pill" style="margin-bottom:14px;">Under Construction · Q4 2028</div>
+              <div class="project-card-name">Nura</div>
+              <div class="project-card-sub">RAK Properties · Mina · Studios from AED 800K</div>
+              <a class="project-card-link" href="./projects/nura.html">View project →</a>
             </div>
           </div>
-        </section>
+        </div>
+        <div class="compare-strip reveal">
+          <p>Can't decide between SKAI and Nura? Compare them side by side.</p>
+          <a class="btn btn-ghost-amber" href="./compare.html">Compare projects ↗</a>
+        </div>
+      </div>
+    </section>
 
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="section-heading section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Signature opportunities</span>
-              <h2>Two Mina projects with enough depth for a serious first release.</h2>
-              <p>We are intentionally launching with a controlled project set: clearer facts, stronger narrative, and cleaner next steps. More inventory can sit behind the advisory layer without cluttering the public experience.</p>
+    <!-- BRIEF FORM -->
+    <section class="brief-section" id="brief">
+      <div class="container">
+        <div class="brief-grid">
+          <div class="brief-trust reveal">
+            <div class="eyebrow" style="margin-bottom:24px;">Leave a brief</div>
+            <h2 class="section-title" style="margin-bottom:32px;">Tell us what you're looking for.</h2>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Response within 24 hours — no spam, no bulk campaigns</div>
             </div>
-            <div class="project-grid">
-              <article class="project-card section-reveal">
-                <div class="project-media">
-                  <img src="./assets/media/skai-exterior.jpg" alt="SKAI exterior view">
-                  <div class="media-label">
-                    <span>SKAI</span>
-                    <span>South Harbour | Mina</span>
-                  </div>
-                </div>
-                <div class="project-copy">
-                  <h3>Waterfront calm with a stronger resort-living read.</h3>
-                  <div class="chip-row">
-                    <span class="chip">Q2 2028</span>
-                    <span class="chip">From AED 877K</span>
-                    <span class="chip">50/50, 70/30, 60/40</span>
-                  </div>
-                  <p>SKAI reads as composed coastal living with clean sea-view positioning, softer luxury, and a strong amenity story for end-users, second-home buyers, and investors.</p>
-                  <a href="./projects/skai.html">Open SKAI brief</a>
-                </div>
-              </article>
-              <article class="project-card section-reveal">
-                <div class="project-media">
-                  <img src="./assets/media/nura-exterior-day.jpg" alt="Nura exterior render">
-                  <div class="media-label">
-                    <span>Nura</span>
-                    <span>Downtown Mina</span>
-                  </div>
-                </div>
-                <div class="project-copy">
-                  <h3>Downtown island energy with a denser amenity stack.</h3>
-                  <div class="chip-row">
-                    <span class="chip">Q1 2029</span>
-                    <span class="chip">From AED 800K</span>
-                    <span class="chip">40/60 and 60/40</span>
-                  </div>
-                  <p>Nura is the more urban, social, and amenity-dense play in Mina, positioned for buyers who want movement, design, and more everyday activation.</p>
-                  <a href="./projects/nura.html">Open Nura brief</a>
-                </div>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Private market access</strong>
-                <p>Beyond public project pages, Rimalta can guide private opportunities, quieter owner-side inventory, and selective comparisons when the right fit is not obvious from brochure language alone.</p>
-                <div class="chip-row" style="margin-top: 18px">
-                  <span class="chip">Mina focus</span>
-                  <span class="chip">Cross-border buyers</span>
-                  <span class="chip">Owner-led sourcing</span>
-                </div>
-              </article>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">One advisor, not a rotating team of junior agents</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Honest project matching — we'll tell you if it's not right for you</div>
             </div>
           </div>
-        </section>
-
-        <section class="section">
-          <div class="section-inner">
-            <div class="feature-layout">
-              <div class="media-card section-reveal">
-                <img src="./assets/media/skai-living.jpg" alt="SKAI living room">
-                <div class="media-label">
-                  <span>Calm luxury</span>
-                  <span>Operationally exact</span>
-                </div>
-              </div>
-              <div class="stack">
-                <div class="section-heading section-reveal">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Why Rimalta works differently</span>
-                  <h2>The service feels calm because the operating layer is strict.</h2>
-                  <p>Clients do not need to see a software product. They need to feel better execution. The difference shows up in speed, qualification, next steps, and visibility.</p>
-                </div>
-                <div class="feature-grid">
-                  <article class="feature-card section-reveal">
-                    <strong>Faster first response</strong>
-                    <p>Cleaner lead intake and less drift between portal inquiry, call, WhatsApp, and assigned agent.</p>
-                  </article>
-                  <article class="feature-card section-reveal">
-                    <strong>Structured qualification</strong>
-                    <p>We reduce wasted viewings by understanding budget, timing, use case, and fit earlier.</p>
-                  </article>
-                  <article class="feature-card section-reveal">
-                    <strong>Owner reporting</strong>
-                    <p>Listing preparation, inquiry handling, viewings, and market feedback should not live only in memory.</p>
-                  </article>
-                  <article class="feature-card section-reveal">
-                    <strong>Project clarity</strong>
-                    <p>We compare destination logic, payment plans, and product character instead of forwarding PDF packs without context.</p>
-                  </article>
-                  <article class="feature-card section-reveal">
-                    <strong>Cross-border confidence</strong>
-                    <p>International buyers need smoother process explanations and less friction around next steps.</p>
-                  </article>
-                  <article class="feature-card section-reveal">
-                    <strong>Better follow-through</strong>
-                    <p>Every viewing, objection, and decision point should lead to a visible next move.</p>
-                  </article>
-                </div>
-              </div>
+          <form class="brief-form reveal" id="brief-form">
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" id="name" name="name" type="text" required>
             </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-inner">
-            <div class="owner-layout">
-              <div class="stack">
-                <div class="section-heading section-reveal">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">For owners</span>
-                  <h2>Owners choose Rimalta for sharper listing execution and clearer reporting.</h2>
-                  <p>We are building an owner-first service layer around structured intake, clean media readiness, faster response, better viewing coordination, and more disciplined updates.</p>
-                </div>
-                <div class="process-grid">
-                  <article class="process-card section-reveal">
-                    <strong>01. Intake and positioning</strong>
-                    <p>We collect the facts that matter before going public: the asset, the price logic, the approvals, the media gaps, and the commercial goal.</p>
-                  </article>
-                  <article class="process-card section-reveal">
-                    <strong>02. Lead handling</strong>
-                    <p>Every inquiry should move through clear response and qualification logic instead of getting lost between agents or chats.</p>
-                  </article>
-                  <article class="process-card section-reveal">
-                    <strong>03. Viewing discipline</strong>
-                    <p>Showings should produce feedback, objection signals, and the next step, not silence.</p>
-                  </article>
-                  <article class="process-card section-reveal">
-                    <strong>04. Reporting</strong>
-                    <p>Owners should see activity, quality, and decision points without needing to chase for visibility.</p>
-                  </article>
-                </div>
-                <a class="button-secondary section-reveal" href="./owners.html#valuation">Request a valuation</a>
-              </div>
-              <div class="media-card section-reveal">
-                <img src="./assets/media/skai-lobby.jpg" alt="SKAI lobby">
-                <div class="media-label">
-                  <span>Listing preparation</span>
-                  <span>Reporting discipline</span>
-                </div>
-              </div>
+            <div class="form-field">
+              <label class="form-label" for="intent">I am looking to</label>
+              <select class="form-input form-select" id="intent" name="intent" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Buy</option>
+                <option>Invest</option>
+                <option>Lease</option>
+                <option>List my property</option>
+              </select>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="callout section-reveal">
-              <div class="cta-layout">
-                <div class="callout-copy stack">
-                  <span class="eyebrow">Investor confidence</span>
-                  <h2>For buyers and investors, the edge is clarity.</h2>
-                  <p>Whether the right move is ready, resale, or off-plan, the real value is not more noise. It is tighter comparison, cleaner payment-plan explanation, and less uncertainty about what happens next.</p>
-                  <div class="chip-row">
-                    <span class="chip">Foreign buyer guidance</span>
-                    <span class="chip">Project comparison</span>
-                    <span class="chip">Payment-plan clarity</span>
-                  </div>
-                </div>
-                <div class="stack">
-                  <article class="process-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.08); color: white">
-                    <strong>Ready and resale</strong>
-                    <p style="color: rgba(255,255,255,0.76)">For buyers who want clearer timing, direct negotiation, and faster transaction visibility.</p>
-                  </article>
-                  <article class="process-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.08); color: white">
-                    <strong>Primary market</strong>
-                    <p style="color: rgba(255,255,255,0.76)">For buyers and investors who need stronger project selection, timeline logic, and cleaner next-step handling.</p>
-                  </article>
-                  <a class="button" href="./invest.html">See the investor path</a>
-                </div>
-              </div>
+            <div class="form-field">
+              <label class="form-label" for="project">Project interest</label>
+              <select class="form-input form-select" id="project" name="project">
+                <option value="" disabled selected>Select one</option>
+                <option>SKAI</option>
+                <option>Nura</option>
+                <option>Both / undecided</option>
+                <option>Other / not sure</option>
+              </select>
             </div>
-          </div>
-        </section>
-
-        <section class="section" id="insights">
-          <div class="section-inner">
-            <div class="section-heading section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">High-intent answers</span>
-              <h2>We write for decisions, not for noise.</h2>
-              <p>The strongest future growth layer for Rimalta is bottom-of-funnel clarity: answering the real questions buyers, owners, and investors ask before they move.</p>
+            <div class="form-field">
+              <label class="form-label" for="budget">Budget range (AED)</label>
+              <input class="form-input" id="budget" name="budget" type="text" placeholder="e.g. 900K–1.2M">
             </div>
-            <div class="faq-grid">
-              <article class="faq-card section-reveal">
-                <strong>SKAI or Nura?</strong>
-                <p>We compare product character, amenity density, destination logic, and payment-plan behavior instead of just forwarding brochures.</p>
-              </article>
-              <article class="faq-card section-reveal">
-                <strong>How does owner reporting work?</strong>
-                <p>Listing readiness, inquiry handling, viewing outcomes, and next recommendations should be visible, not improvised.</p>
-              </article>
-              <article class="faq-card section-reveal">
-                <strong>What should a foreign buyer expect?</strong>
-                <p>Clearer transaction steps, stronger advisory around process, and less uncertainty around what comes after interest turns serious.</p>
-              </article>
-              <article class="faq-card section-reveal">
-                <strong>Can leasing still be premium?</strong>
-                <p>Yes. Leasing is often where response speed, community knowledge, and follow-up discipline are most visible.</p>
-              </article>
+            <div class="form-field">
+              <label class="form-label" for="notes">Anything else</label>
+              <input class="form-input" id="notes" name="notes" type="text" placeholder="Timeline, questions, context">
             </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-inner">
-            <div class="form-card surface section-reveal" id="lead-form">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Advisory</span>
-              <h2>Start with a better brief.</h2>
-              <p class="lede">Tell us what you are solving for. We will use it to shape the first advisory call, shortlist, or owner-side recommendation.</p>
-              <form class="form-grid" data-mail-form>
-                <div class="field">
-                  <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" placeholder="Your name" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="you@example.com" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel" placeholder="+971">
-                </div>
-                <div class="field">
-                  <label for="interest">Interest</label>
-                  <select id="interest" name="interest">
-                    <option>Book Advisory Call</option>
-                    <option>Buy</option>
-                    <option>Lease</option>
-                    <option>Sell</option>
-                    <option>Invest</option>
-                    <option>Project Information</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="budget">Budget or target range</label>
-                  <input id="budget" name="budget" type="text" placeholder="AED range or open budget">
-                </div>
-                <div class="field">
-                  <label for="timeline">Target timing</label>
-                  <input id="timeline" name="timeline" type="text" placeholder="Now, 3 months, 6 months, flexible">
-                </div>
-                <div class="field field-full">
-                  <label for="message">What do you need help with?</label>
-                  <textarea id="message" name="message" placeholder="Tell us the asset, location, project, budget, or owner-side objective."></textarea>
-                </div>
-                <div class="field-full">
-                  <div class="form-actions">
-                    <button class="button" type="submit">Send advisory request</button>
-                    <span class="form-note">Your request opens as a pre-filled advisory email for first-deploy handling.</span>
-                  </div>
-                  <div class="form-status" data-form-status></div>
-                </div>
-              </form>
+            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;">
+              <button class="btn btn-primary" type="submit">Send brief →</button>
+              <a class="btn btn-ghost-white" href="https://wa.me/971000000000" target="_blank" rel="noopener" style="background:rgba(37,211,102,0.08);border-color:rgba(37,211,102,0.4);color:#25D366;">Message on WhatsApp</a>
             </div>
-          </div>
-        </section>
-      </main>
+          </form>
+        </div>
+      </div>
+    </section>
 
-      <div data-site-footer></div>
-    </div>
-  </body>
+  </main>
+
+  <div data-site-footer></div>
+
+</body>
 </html>
