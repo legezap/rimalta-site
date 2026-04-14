@@ -1,190 +1,152 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invest | Rimalta</title>
-    <meta name="description" content="Rimalta supports investors and cross-border buyers with project clarity, process discipline, and calmer transaction guidance.">
-    <link rel="stylesheet" href="./styles/site.css">
-    <script defer src="./scripts/site.js"></script>
-  </head>
-  <body data-page="invest" data-depth="0">
-    <div class="site-shell">
-      <div data-site-header></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invest | Rimalta</title>
+  <meta name="description" content="Investment thesis, project comparison, payment plan clarity, and ROI framing for SKAI and Nura by RAK Properties in Ras Al Khaimah.">
+  <link rel="stylesheet" href="./styles/site.css">
+  <style>
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--white-06);
+    }
+    .stat-strip-item {
+      background: var(--void);
+      padding: 28px 24px;
+    }
+    .thesis-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 640px;
+    }
+    .thesis-item {
+      border-left: 2px solid var(--amber);
+      padding-left: 20px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="./scripts/site.js"></script>
+</head>
+<body data-page="invest" data-depth="0">
 
-      <main>
-        <section class="page-hero">
-          <div class="section-inner">
-            <div class="page-hero-card surface section-reveal">
-              <div class="page-hero-grid">
-                <div class="page-hero-copy">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Invest</span>
-                  <h1>Invest with more clarity and less brochure theater.</h1>
-                  <p>We want the investor path to feel calmer: clearer project comparison, more exact payment-plan logic, and better handling for buyers entering the UAE market from abroad.</p>
-                  <div class="page-actions">
-                    <a class="button" href="#lead-form">Book investor advisory</a>
-                    <a class="button-secondary" href="./projects.html">Compare current projects</a>
-                  </div>
-                  <div class="hero-tags">
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Foreign buyer support</span>
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Payment-plan clarity</span>
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Project comparison</span>
-                  </div>
-                </div>
-                <div class="hero-media">
-                  <img src="./assets/media/nura-exterior-night.jpg" alt="Nura night render">
-                </div>
-              </div>
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <section style="padding:80px 0 60px;border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:20px;">Invest</div>
+        <h1 class="headline reveal" style="max-width:640px;margin-bottom:24px;">Ras Al Khaimah is the UAE's best-value waterfront investment market right now.</h1>
+        <p class="body-copy reveal" style="max-width:520px;">Two developer-backed projects at Mina. Transparent payment plans. Advisory that helps you read the deal, not just sign it.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom:1px solid var(--white-06);padding:48px 0;">
+      <div class="container">
+        <div class="stat-strip cards-row">
+          <div class="stat-strip-item reveal">
+            <div class="stat-value" style="font-size:36px;margin-bottom:6px;">7–9%</div>
+            <div class="stat-label">Estimated gross rental yield — SKAI</div>
+          </div>
+          <div class="stat-strip-item reveal">
+            <div class="stat-value" style="font-size:36px;margin-bottom:6px;">AED 800K</div>
+            <div class="stat-label">Entry point — Nura studios</div>
+          </div>
+          <div class="stat-strip-item reveal">
+            <div class="stat-value" style="font-size:36px;margin-bottom:6px;">60/40</div>
+            <div class="stat-label">SKAI payment plan</div>
+          </div>
+          <div class="stat-strip-item reveal">
+            <div class="stat-value" style="font-size:36px;margin-bottom:6px;">2028</div>
+            <div class="stat-label">Earliest delivery — SKAI Q2</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:40px;">
+          <div class="eyebrow" style="margin-bottom:16px;">Why Ras Al Khaimah</div>
+          <h2 class="section-title" style="max-width:560px;">The last affordable waterfront entry point in the UAE before prices correct.</h2>
+        </div>
+        <div class="thesis-list">
+          <div class="thesis-item reveal">
+            <p class="body-copy">No income tax. No capital gains tax. Freehold ownership for foreign nationals.</p>
+          </div>
+          <div class="thesis-item reveal">
+            <p class="body-copy">Developer (RAK Properties) is 35% government-owned — low counterparty risk on off-plan delivery.</p>
+          </div>
+          <div class="thesis-item reveal">
+            <p class="body-copy">Mina masterplan is a planned tourism zone — short-term rental permitted, infrastructure committed.</p>
+          </div>
+          <div class="thesis-item reveal">
+            <p class="body-copy">Price per sqft still 30–40% below comparable Dubai waterfront. Window is closing.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:48px;" class="reveal">
+          <a class="btn btn-primary" href="./compare.html">Compare SKAI vs Nura →</a>
+          <a class="btn btn-ghost-white" href="./index.html#brief">Leave a brief ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section" id="brief">
+      <div class="container">
+        <div class="brief-grid">
+          <div class="brief-trust reveal">
+            <div class="eyebrow" style="margin-bottom:24px;">Investor brief</div>
+            <h2 class="section-title" style="margin-bottom:32px;">Tell us your investment goals and we'll map the right unit.</h2>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Yield-first, lifestyle-first, or capital-growth framing — we'll match accordingly</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Payment plan walkthroughs on request — no pressure, no deadlines</div>
             </div>
           </div>
-        </section>
-
-        <section class="section">
-          <div class="section-inner">
-            <div class="section-heading section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Decision support</span>
-              <h2>The most useful investor content answers the real questions near decision time.</h2>
-              <p>Not generic market noise. Real comparison. Real timing. Real process. That is where trust starts.</p>
+          <form class="brief-form reveal" id="brief-form">
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" id="name" name="name" type="text" required>
             </div>
-            <div class="comparison-grid">
-              <article class="comparison-card section-reveal">
-                <strong>Ready and resale</strong>
-                <p>Better when you need clearer timing, more direct negotiation, and a more immediate path to execution.</p>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Off-plan and projects</strong>
-                <p>Better when the payment-plan structure, product story, and delivery horizon align with the strategy.</p>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Cross-border buyers</strong>
-                <p>Need stronger guidance around what happens after interest becomes serious, not just polished brochures.</p>
-              </article>
+            <div class="form-field">
+              <label class="form-label" for="project">Project interest</label>
+              <select class="form-input form-select" id="project" name="project">
+                <option value="" disabled selected>Select one</option>
+                <option>SKAI</option>
+                <option>Nura</option>
+                <option>Both / undecided</option>
+              </select>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="comparison-table surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Current public project comparison</span>
-              <h2>Where each Mina project is strongest today.</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Focus</th>
-                    <th>SKAI</th>
-                    <th>Nura</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Lifestyle read</td>
-                    <td>Calm waterfront premium and softer resort living.</td>
-                    <td>Downtown island energy and a denser social amenity stack.</td>
-                  </tr>
-                  <tr>
-                    <td>Buyer profile</td>
-                    <td>Second home, end-user calm, coastal composure, family-friendly without becoming mass market.</td>
-                    <td>Urban-island buyers and investors who want activation, retail adjacency, and stronger amenity density.</td>
-                  </tr>
-                  <tr>
-                    <td>Pricing entry</td>
-                    <td>AED 877K</td>
-                    <td>AED 800K</td>
-                  </tr>
-                  <tr>
-                    <td>Complexity</td>
-                    <td>Simpler emotional story built around sea views and retreat character.</td>
-                    <td>More layered story around downtown formation, amenities, and activated public realm.</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="form-field">
+              <label class="form-label" for="budget">Budget (AED)</label>
+              <input class="form-input" id="budget" name="budget" type="text" placeholder="e.g. 900K–1.5M">
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="invest-layout">
-              <div class="media-card section-reveal">
-                <img src="./assets/media/nura-clubhouse.jpg" alt="Nura clubhouse">
-                <div class="media-label">
-                  <span>Investor-grade presentation</span>
-                  <span>Cleaner next steps</span>
-                </div>
-              </div>
-              <div class="stack">
-                <div class="section-heading section-reveal">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Why this matters</span>
-                  <h2>Good investor service is not only about inventory.</h2>
-                  <p>The real edge is explaining the market and the transaction cleanly enough that confidence increases rather than drops as the conversation becomes more serious.</p>
-                </div>
-                <ul class="value-list">
-                  <li class="section-reveal"><strong>Project selection support</strong><span>We reduce confusion between product stories that can sound similar at brochure level.</span></li>
-                  <li class="section-reveal"><strong>Payment-plan clarity</strong><span>We explain what the structure means commercially, not just what the percentages are.</span></li>
-                  <li class="section-reveal"><strong>Cross-border process confidence</strong><span>Foreign buyers need a calmer sense of sequence and next steps.</span></li>
-                  <li class="section-reveal"><strong>Private opportunity path</strong><span>Not every relevant option should live in public inventory.</span></li>
-                </ul>
-              </div>
+            <div class="form-field">
+              <label class="form-label" for="priority">Investment priority</label>
+              <select class="form-input form-select" id="priority" name="priority">
+                <option value="" disabled selected>Select one</option>
+                <option>Rental yield</option>
+                <option>Capital appreciation</option>
+                <option>Both equally</option>
+              </select>
             </div>
-          </div>
-        </section>
+            <button class="btn btn-primary" type="submit" style="margin-top:8px;">Send brief →</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-        <section class="section" id="lead-form">
-          <div class="section-inner">
-            <div class="form-card surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Investor advisory</span>
-              <h2>Tell us how you want to invest.</h2>
-              <p class="lede">We will use this to shape the first project shortlist, comparison pack, or next advisory call.</p>
-              <form class="form-grid" data-mail-form>
-                <div class="field">
-                  <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel">
-                </div>
-                <div class="field">
-                  <label for="interest">Investment path</label>
-                  <select id="interest" name="interest">
-                    <option>Book Advisory Call</option>
-                    <option>Compare Projects</option>
-                    <option>End-user purchase</option>
-                    <option>Investment purchase</option>
-                    <option>Cross-border guidance</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="budget">Budget</label>
-                  <input id="budget" name="budget" type="text" placeholder="AED range">
-                </div>
-                <div class="field">
-                  <label for="timeline">Timing</label>
-                  <input id="timeline" name="timeline" type="text" placeholder="Now, this year, flexible">
-                </div>
-                <div class="field field-full">
-                  <label for="message">Notes</label>
-                  <textarea id="message" name="message" placeholder="Tell us the area, use case, buyer profile, and whether you want ready, resale, or off-plan."></textarea>
-                </div>
-                <div class="field-full">
-                  <div class="form-actions">
-                    <button class="button" type="submit">Send investor request</button>
-                    <span class="form-note">This first deploy opens your advisory request as a pre-filled email.</span>
-                  </div>
-                  <div class="form-status" data-form-status></div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
+  </main>
 
-      <div data-site-footer></div>
-    </div>
-  </body>
+  <div data-site-footer></div>
+
+</body>
 </html>

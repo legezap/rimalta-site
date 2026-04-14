@@ -1,215 +1,123 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Rimalta</title>
-    <meta name="description" content="Current project opportunities at Rimalta, including SKAI and Nura in Mina, Ras Al Khaimah.">
-    <link rel="stylesheet" href="./styles/site.css">
-    <script defer src="./scripts/site.js"></script>
-  </head>
-  <body data-page="buy" data-depth="0">
-    <div class="site-shell">
-      <div data-site-header></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Rimalta</title>
+  <meta name="description" content="SKAI and Nura by RAK Properties at Mina, Ras Al Khaimah. Studios from AED 800K. Rimalta advisory.">
+  <link rel="stylesheet" href="./styles/site.css">
+  <style>
+    .project-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      background: var(--white-06);
+    }
+    .project-card-lg {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 36px 32px;
+    }
+    .project-card-lg-photo {
+      position: absolute;
+      inset: 0;
+      /* TODO: replace with real photo */
+    }
+    .project-card-lg-photo.skai {
+      background: linear-gradient(145deg, #1a1510 0%, #2a1f0e 40%, #1a1208 100%);
+    }
+    .project-card-lg-photo.nura {
+      background: linear-gradient(145deg, #0d1318 0%, #0f1a22 40%, #0a1015 100%);
+    }
+    .project-card-lg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.4) 60%, transparent 100%);
+    }
+    .project-card-lg-content {
+      position: relative;
+      z-index: 2;
+    }
+    .project-card-lg-name {
+      font-family: 'Bodoni Moda', serif;
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 900;
+      letter-spacing: -3px;
+      color: var(--white);
+      line-height: 0.9;
+      margin-bottom: 12px;
+    }
+    .project-card-lg-sub {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="./scripts/site.js"></script>
+</head>
+<body data-page="projects" data-depth="0">
 
-      <main>
-        <section class="page-hero">
-          <div class="section-inner">
-            <div class="page-hero-card surface section-reveal">
-              <div class="page-hero-grid">
-                <div class="page-hero-copy">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Projects and primary market</span>
-                  <h1>Curated project pages, not brochure noise.</h1>
-                  <p>For first deploy, we are deliberately launching with the strongest commercially ready project stories: enough facts to support real buyer and investor conversations, enough restraint to keep the site credible.</p>
-                  <div class="page-actions">
-                    <a class="button" href="#lead-form">Request project brief</a>
-                    <a class="button-secondary" href="./invest.html">See investor path</a>
-                  </div>
-                  <div class="hero-tags">
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Mina focus</span>
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Cross-border buyers</span>
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Payment-plan clarity</span>
-                  </div>
-                </div>
-                <div class="hero-media">
-                  <img src="./assets/media/nura-exterior-night.jpg" alt="Nura exterior night render">
-                </div>
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <section style="padding:80px 0 60px;border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:20px;">Projects · Mina, RAK</div>
+        <h1 class="headline reveal" style="max-width:600px;margin-bottom:24px;">Two addresses. One advisory layer.</h1>
+        <p class="body-copy reveal" style="max-width:480px;">SKAI and Nura by RAK Properties at Mina, Ras Al Khaimah. One brief, one advisor, clear comparison.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="project-cards">
+          <div class="project-card-lg reveal">
+            <div class="project-card-lg-photo skai"></div>
+            <div class="project-card-lg-overlay"></div>
+            <div class="project-card-lg-content">
+              <div class="status-pill" style="margin-bottom:16px;">Under Construction · Q2 2028</div>
+              <div class="project-card-lg-name">SKAI</div>
+              <div class="project-card-lg-sub">RAK Properties · Mina · Studios from AED 877K</div>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a class="btn btn-primary" href="./projects/skai.html">View SKAI →</a>
+                <a class="btn btn-ghost-white" href="./index.html#brief">Leave a brief ↓</a>
               </div>
             </div>
           </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="project-grid">
-              <article class="project-card section-reveal">
-                <div class="project-media">
-                  <img src="./assets/media/skai-exterior.jpg" alt="SKAI exterior">
-                  <div class="media-label">
-                    <span>SKAI</span>
-                    <span>South Harbour | Mina</span>
-                  </div>
-                </div>
-                <div class="project-copy">
-                  <h3>SKAI</h3>
-                  <p>Waterfront premium residential product with a quieter, resort-oriented read and strong sea-view lifestyle positioning.</p>
-                  <div class="chip-row">
-                    <span class="chip">Q2 2028</span>
-                    <span class="chip">From AED 877K</span>
-                    <span class="chip">Studios to 3BR penthouses</span>
-                  </div>
-                  <a href="./projects/skai.html">View project page</a>
-                </div>
-              </article>
-              <article class="project-card section-reveal">
-                <div class="project-media">
-                  <img src="./assets/media/nura-exterior-day.jpg" alt="Nura exterior">
-                  <div class="media-label">
-                    <span>Nura</span>
-                    <span>Downtown Mina</span>
-                  </div>
-                </div>
-                <div class="project-copy">
-                  <h3>Nura</h3>
-                  <p>Downtown island product with heavier amenity programming, stronger boulevard energy, and broader lifestyle activation.</p>
-                  <div class="chip-row">
-                    <span class="chip">Q1 2029</span>
-                    <span class="chip">From AED 800K</span>
-                    <span class="chip">Studios to 4BR penthouses</span>
-                  </div>
-                  <a href="./projects/nura.html">View project page</a>
-                </div>
-              </article>
-              <article class="comparison-card section-reveal">
-                <strong>Private opportunities</strong>
-                <p>Not every opportunity should be broadcast publicly. For buyers with narrower briefs, we can compare quieter inventory, owner-led stock, and project options inside the advisory process.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="section-inner">
-            <div class="comparison-table surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Mina comparison</span>
-              <h2>SKAI and Nura answer different buyer moods.</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Dimension</th>
-                    <th>SKAI</th>
-                    <th>Nura</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Core read</td>
-                    <td>Calm waterfront retreat with softer luxury and resort cues.</td>
-                    <td>Downtown island living with stronger social and community activation.</td>
-                  </tr>
-                  <tr>
-                    <td>Completion</td>
-                    <td>Q2 2028</td>
-                    <td>Q1 2029</td>
-                  </tr>
-                  <tr>
-                    <td>Starting price</td>
-                    <td>AED 877K</td>
-                    <td>AED 800K</td>
-                  </tr>
-                  <tr>
-                    <td>Payment plans</td>
-                    <td>50/50, 70/30, and 2 years post-handover 60/40.</td>
-                    <td>40/60 and 60/40 structures.</td>
-                  </tr>
-                  <tr>
-                    <td>Best fit</td>
-                    <td>End-users, second-home buyers, and investors who value composed coastal living.</td>
-                    <td>Buyers and investors who want a more activated, amenity-dense urban-island proposition.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="callout section-reveal">
-              <div class="cta-layout">
-                <div class="callout-copy stack">
-                  <span class="eyebrow">What we will not do</span>
-                  <h2>We do not publish half-ready project pages.</h2>
-                  <p>If the pricing, payment-plan wording, or source pack is still unstable, we keep it inside advisory until the public story is clean enough to protect conversion and trust.</p>
-                </div>
-                <div class="stack">
-                  <div class="chip-row">
-                    <span class="chip">No portal clutter</span>
-                    <span class="chip">No brochure dump</span>
-                    <span class="chip">No stale facts</span>
-                  </div>
-                  <a class="button" href="#lead-form">Request a tailored shortlist</a>
-                </div>
+          <div class="project-card-lg reveal">
+            <div class="project-card-lg-photo nura"></div>
+            <div class="project-card-lg-overlay"></div>
+            <div class="project-card-lg-content">
+              <div class="status-pill" style="margin-bottom:16px;">Under Construction · Q4 2028</div>
+              <div class="project-card-lg-name">Nura</div>
+              <div class="project-card-lg-sub">RAK Properties · Mina · Studios from AED 800K</div>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a class="btn btn-primary" href="./projects/nura.html">View Nura →</a>
+                <a class="btn btn-ghost-white" href="./index.html#brief">Leave a brief ↓</a>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+        <div style="padding:24px;background:var(--surface);border-top:1px solid var(--white-06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;" class="reveal">
+          <p class="body-copy" style="font-size:13px;">Not sure which fits your goals? Compare both side by side.</p>
+          <a class="btn btn-ghost-amber" href="./compare.html">Compare SKAI vs Nura ↗</a>
+        </div>
+      </div>
+    </section>
 
-        <section class="section">
-          <div class="section-inner">
-            <div class="form-card surface section-reveal" id="lead-form">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Project advisory</span>
-              <h2>Request a project brief</h2>
-              <p class="lede">Tell us whether you are buying for end use, second home, or investment. We will shape the next advisory step around that intent.</p>
-              <form class="form-grid" data-mail-form>
-                <div class="field">
-                  <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel">
-                </div>
-                <div class="field">
-                  <label for="interest">Project focus</label>
-                  <select id="interest" name="interest">
-                    <option>Project Information</option>
-                    <option>SKAI</option>
-                    <option>Nura</option>
-                    <option>Compare SKAI and Nura</option>
-                    <option>Private Opportunities</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="budget">Budget</label>
-                  <input id="budget" name="budget" type="text" placeholder="AED range">
-                </div>
-                <div class="field">
-                  <label for="timeline">Target timing</label>
-                  <input id="timeline" name="timeline" type="text" placeholder="Immediate, 3 months, flexible">
-                </div>
-                <div class="field field-full">
-                  <label for="message">Notes</label>
-                  <textarea id="message" name="message" placeholder="Tell us whether this is for end use, investment, second home, or comparison support."></textarea>
-                </div>
-                <div class="field-full">
-                  <div class="form-actions">
-                    <button class="button" type="submit">Send request</button>
-                    <span class="form-note">For v1, requests open as a pre-filled advisory email.</span>
-                  </div>
-                  <div class="form-status" data-form-status></div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
+  </main>
 
-      <div data-site-footer></div>
-    </div>
-  </body>
+  <div data-site-footer></div>
+
+</body>
 </html>

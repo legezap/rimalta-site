@@ -1,183 +1,135 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Owners | Rimalta</title>
-    <meta name="description" content="Rimalta helps owners with sharper listing execution, stronger inquiry handling, and clearer reporting across leasing and sales.">
-    <link rel="stylesheet" href="./styles/site.css">
-    <script defer src="./scripts/site.js"></script>
-  </head>
-  <body data-page="owners" data-depth="0">
-    <div class="site-shell">
-      <div data-site-header></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Owners | Rimalta</title>
+  <meta name="description" content="Rimalta owner services: structured listing intake, lead handling, and reporting. No guesswork, no agent memory.">
+  <link rel="stylesheet" href="./styles/site.css">
+  <style>
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--white-06);
+    }
+    @media (min-width: 640px) { .steps-grid { grid-template-columns: repeat(2, 1fr); } }
+    .step-item {
+      background: var(--void);
+      padding: 32px 28px;
+    }
+    .step-num {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 16px;
+    }
+    .step-title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script defer src="./scripts/site.js"></script>
+</head>
+<body data-page="owners" data-depth="0">
 
-      <main>
-        <section class="page-hero">
-          <div class="section-inner">
-            <div class="page-hero-card surface section-reveal">
-              <div class="page-hero-grid">
-                <div class="page-hero-copy">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">For owners</span>
-                  <h1>Owners need more than exposure. They need control.</h1>
-                  <p>Rimalta is being built to give owners stronger listing preparation, better lead handling, cleaner viewing coordination, and reporting that does not depend on chasing agents for memory.</p>
-                  <div class="page-actions">
-                    <a class="button" href="#valuation">Request valuation</a>
-                    <a class="button-secondary" href="#process">See the process</a>
-                  </div>
-                  <div class="hero-tags">
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Listing readiness</span>
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Inquiry control</span>
-                    <span class="hero-tag" style="background: rgba(35,37,31,0.06); color: var(--wadi); border-color: rgba(167,156,144,0.28)">Owner reporting</span>
-                  </div>
-                </div>
-                <div class="hero-media">
-                  <img src="./assets/media/skai-lobby.jpg" alt="Refined property lobby">
-                </div>
-              </div>
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <section style="padding:80px 0 60px;border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:20px;">For property owners</div>
+        <h1 class="headline reveal" style="max-width:640px;margin-bottom:24px;">Your property deserves more than agent memory and a WhatsApp thread.</h1>
+        <p class="body-copy reveal" style="max-width:520px;">Structured listing preparation, inquiry handling, and weekly reporting. One point of contact, visible process, no guesswork.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:40px;">
+          <div class="eyebrow" style="margin-bottom:16px;">How it works</div>
+          <h2 class="section-title">Four steps from intake to offer.</h2>
+        </div>
+        <div class="steps-grid cards-row">
+          <div class="step-item reveal">
+            <div class="step-num">01</div>
+            <div class="step-title">Intake</div>
+            <p class="body-copy">Structured briefing call — unit type, condition, target timeline, pricing position. We record it, not your brain.</p>
+          </div>
+          <div class="step-item reveal">
+            <div class="step-num">02</div>
+            <div class="step-title">Listing preparation</div>
+            <p class="body-copy">Photography coordination, copy, pricing justification. Listed on the right channels, not every channel.</p>
+          </div>
+          <div class="step-item reveal">
+            <div class="step-num">03</div>
+            <div class="step-title">Lead handling</div>
+            <p class="body-copy">Every inquiry logged, qualified, and followed up. You receive a summary — not a WhatsApp flood.</p>
+          </div>
+          <div class="step-item reveal">
+            <div class="step-num">04</div>
+            <div class="step-title">Reporting</div>
+            <p class="body-copy">Weekly visibility on views, inquiries, and next steps. Progress you can see, not agent confidence you have to trust.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section" id="brief">
+      <div class="container">
+        <div class="brief-grid">
+          <div class="brief-trust reveal">
+            <div class="eyebrow" style="margin-bottom:24px;">Get started</div>
+            <h2 class="section-title" style="margin-bottom:32px;">Submit your brief and we'll be in touch within 24 hours.</h2>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">No obligation — we'll tell you honestly whether the timing is right</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">One senior advisor, not a junior intake team</div>
             </div>
           </div>
-        </section>
-
-        <section class="section" id="process">
-          <div class="section-inner">
-            <div class="section-heading section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">How we work</span>
-              <h2>Sharper listing execution starts before the first inquiry.</h2>
-              <p>Most brokerage frustration comes from weak preparation, slow follow-through, and poor visibility. Our owner-side process is built to reduce that.</p>
+          <form class="brief-form reveal" id="brief-form">
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" id="name" name="name" type="text" required>
             </div>
-            <div class="process-grid">
-              <article class="process-card section-reveal">
-                <strong>01. Property intake</strong>
-                <p>We define the asset correctly, collect the commercial context, and identify what is still missing before going live.</p>
-              </article>
-              <article class="process-card section-reveal">
-                <strong>02. Listing readiness</strong>
-                <p>Media, copy, pricing logic, and owner approvals should reach a publishable standard before exposure starts.</p>
-              </article>
-              <article class="process-card section-reveal">
-                <strong>03. Response discipline</strong>
-                <p>Every inquiry needs a clear owner, a defined SLA, and a visible next action.</p>
-              </article>
-              <article class="process-card section-reveal">
-                <strong>04. Viewing coordination</strong>
-                <p>Viewings should produce attendance, feedback, objection notes, and the next commercial move.</p>
-              </article>
-              <article class="process-card section-reveal">
-                <strong>05. Market feedback</strong>
-                <p>Owners should not be guessing whether the issue is pricing, positioning, media, or stock quality.</p>
-              </article>
-              <article class="process-card section-reveal">
-                <strong>06. Reporting and recommendation</strong>
-                <p>We want the reporting layer to help owners decide, not just to prove activity happened.</p>
-              </article>
+            <div class="form-field">
+              <label class="form-label" for="property">Property type</label>
+              <input class="form-input" id="property" name="property" type="text" placeholder="e.g. 2BR apartment, Mina RAK">
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="owner-layout">
-              <div class="media-card section-reveal">
-                <img src="./assets/media/nura-lobby.jpg" alt="Nura lobby">
-                <div class="media-label">
-                  <span>Premium service layer</span>
-                  <span>Disciplined operations</span>
-                </div>
-              </div>
-              <div class="stack">
-                <div class="section-heading section-reveal">
-                  <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">What owners actually receive</span>
-                  <h2>A calmer service experience backed by a stricter machine.</h2>
-                </div>
-                <ul class="value-list">
-                  <li class="section-reveal"><strong>Listing preparation discipline</strong><span>Clearer intake, cleaner materials, and better readiness before exposure.</span></li>
-                  <li class="section-reveal"><strong>Lead-handling visibility</strong><span>Faster response, better qualification, and less leakage between channels and agents.</span></li>
-                  <li class="section-reveal"><strong>Viewing follow-through</strong><span>Feedback and next-step capture after showings, not silence.</span></li>
-                  <li class="section-reveal"><strong>Owner reporting</strong><span>Meaningful market feedback with clearer recommendations.</span></li>
-                </ul>
-              </div>
+            <div class="form-field">
+              <label class="form-label" for="goal">Your goal</label>
+              <select class="form-input form-select" id="goal" name="goal">
+                <option value="" disabled selected>Select one</option>
+                <option>Sell</option>
+                <option>Lease</option>
+                <option>Short-term rental</option>
+                <option>Valuation only</option>
+              </select>
             </div>
-          </div>
-        </section>
-
-        <section class="section compact">
-          <div class="section-inner">
-            <div class="callout section-reveal">
-              <div class="cta-layout">
-                <div class="callout-copy stack">
-                  <span class="eyebrow">Leasing and sales</span>
-                  <h2>We do not force every owner into the same commercial path.</h2>
-                  <p>The right strategy depends on the asset, the area, the timing, and the economics. Leasing may be the daily engine. Sales may deserve more attention when the margin justifies it. The owner-side process should be clear enough to support either with discipline.</p>
-                </div>
-                <div class="stack">
-                  <div class="chip-row">
-                    <span class="chip">Leasing</span>
-                    <span class="chip">Sales</span>
-                    <span class="chip">Owner representation</span>
-                  </div>
-                  <a class="button" href="#valuation">Request owner consultation</a>
-                </div>
-              </div>
+            <div class="form-field">
+              <label class="form-label" for="timeline">Timeline</label>
+              <input class="form-input" id="timeline" name="timeline" type="text" placeholder="e.g. Ready now, or 3 months">
             </div>
-          </div>
-        </section>
+            <button class="btn btn-primary" type="submit" style="margin-top:8px;">Send brief →</button>
+          </form>
+        </div>
+      </div>
+    </section>
 
-        <section class="section" id="valuation">
-          <div class="section-inner">
-            <div class="form-card surface section-reveal">
-              <span class="eyebrow" style="color: rgba(35, 37, 31, 0.62)">Owner inquiry</span>
-              <h2>Request valuation or owner-side review</h2>
-              <p class="lede">Tell us what you need to move. We will use it to shape the right next step for sale, lease, or representation.</p>
-              <form class="form-grid" data-mail-form>
-                <div class="field">
-                  <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" required>
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel">
-                </div>
-                <div class="field">
-                  <label for="interest">Owner objective</label>
-                  <select id="interest" name="interest">
-                    <option>Request Valuation</option>
-                    <option>Sell</option>
-                    <option>Lease</option>
-                    <option>Portfolio Review</option>
-                    <option>Owner Reporting Discussion</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="budget">Property or pricing reference</label>
-                  <input id="budget" name="budget" type="text" placeholder="Asset, community, or target price">
-                </div>
-                <div class="field">
-                  <label for="timeline">Target timing</label>
-                  <input id="timeline" name="timeline" type="text" placeholder="Immediate, this quarter, flexible">
-                </div>
-                <div class="field field-full">
-                  <label for="message">Asset details</label>
-                  <textarea id="message" name="message" placeholder="Share the property, community, objective, and anything already prepared."></textarea>
-                </div>
-                <div class="field-full">
-                  <div class="form-actions">
-                    <button class="button" type="submit">Send owner request</button>
-                    <span class="form-note">First deploy routing opens as a pre-filled advisory email.</span>
-                  </div>
-                  <div class="form-status" data-form-status></div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
+  </main>
 
-      <div data-site-footer></div>
-    </div>
-  </body>
+  <div data-site-footer></div>
+
+</body>
 </html>

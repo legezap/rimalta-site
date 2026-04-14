@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lease | Rimalta</title>
+  <meta name="description" content="Rimalta lease advisory — responsive tenant matching with real follow-through. Ras Al Khaimah.">
+  <link rel="stylesheet" href="./styles/site.css">
+  <style>
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--white-06);
+    }
+    .service-item {
+      background: var(--void);
+      padding: 32px 28px;
+    }
+    .service-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+  </style>
+  <script defer src="./scripts/site.js"></script>
+</head>
+<body data-page="lease" data-depth="0">
+
+  <div data-site-header></div>
+
+  <main class="page-start">
+
+    <section style="padding:80px 0 60px;border-bottom:1px solid var(--white-06);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:20px;">Lease</div>
+        <h1 class="headline reveal" style="max-width:600px;margin-bottom:24px;">Responsive matching. Real follow-through.</h1>
+        <p class="body-copy reveal" style="max-width:480px;">Whether you're looking to lease a unit in Mina or need help finding a tenant for your property, Rimalta handles the qualification and follow-up — not just the listing.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:40px;">
+          <div class="eyebrow" style="margin-bottom:16px;">How Rimalta handles leasing</div>
+        </div>
+        <div class="service-grid cards-row">
+          <div class="service-item reveal">
+            <div class="service-label">Tenant qualification</div>
+            <p class="body-copy">Every inquiry is qualified before it reaches you. Employment, timeline, and budget verified before a viewing is booked.</p>
+          </div>
+          <div class="service-item reveal">
+            <div class="service-label">Follow-through</div>
+            <p class="body-copy">Tenants who ghost are replaced from the queue, not chased indefinitely. Your time is not wasted on weak leads.</p>
+          </div>
+          <div class="service-item reveal">
+            <div class="service-label">Contract and handover</div>
+            <p class="body-copy">Standard lease documentation coordinated. Condition report, key handover, and first payment confirmed before closure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brief-section" id="brief">
+      <div class="container">
+        <div class="brief-grid">
+          <div class="brief-trust reveal">
+            <div class="eyebrow" style="margin-bottom:24px;">Lease brief</div>
+            <h2 class="section-title" style="margin-bottom:32px;">Tell us what you need and we'll match accordingly.</h2>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Available inventory in Mina — SKAI and Nura units on request</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-dot"></div>
+              <div class="trust-label">Owner representation also available — tenant sourcing and qualification</div>
+            </div>
+          </div>
+          <form class="brief-form reveal" id="brief-form">
+            <div class="form-field">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" id="name" name="name" type="text" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="role">I am a</label>
+              <select class="form-input form-select" id="role" name="role" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Tenant looking to lease</option>
+                <option>Owner looking for a tenant</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="type">Unit type</label>
+              <input class="form-input" id="type" name="type" type="text" placeholder="e.g. 1BR, studio, 2BR">
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="budget">Budget / asking rent (AED / year)</label>
+              <input class="form-input" id="budget" name="budget" type="text" placeholder="e.g. 70,000–90,000">
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="timeline">Move-in timeline</label>
+              <input class="form-input" id="timeline" name="timeline" type="text" placeholder="e.g. Immediately, 2 months">
+            </div>
+            <button class="btn btn-primary" type="submit" style="margin-top:8px;">Send brief →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-site-footer></div>
+
+</body>
+</html>
